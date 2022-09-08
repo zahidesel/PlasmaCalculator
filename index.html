@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4981aa;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="sun.png" alt="" width="50" height="40">
+            </a>
+            <a class="navbar-brand" href="#">Space Physics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#calculator">Calculator</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Magnetosphere
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#magnetosphere">Earth</a></li>
+                            <li><a class="dropdown-item" href="#">Mars</a></li>
+                            <li><a class="dropdown-item" href="#">Jupiter</a></li>
+                            <li><a class="dropdown-item" href="#">Saturn</a></li>
+                            <li><a class="dropdown-item" href="#">Uranus</a></li>
+                            <li><a class="dropdown-item" href="#">Neptune</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="home" class="home">
+        <h1>Plasma Parameters Calculator</h1>
+        <p>Plasma describes a state of matter in which the charged particles of decomposed atoms become a collective
+            assemblage, where none of the particles are actually free, but strongly affected by the EM fields of each
+            neighbor particle. The system of charged particles responds collectively to electromagnetic forces. <br>
+            This calculator will compute the values for:</p>
+    </div>
+      <div class="formuls">
+    <table class="table table-striped">
+        <thead>
+         
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Alfven Velocity</th>
+            <td><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>V</mi>
+                <mo>=</mo>
+                <mrow data-mjx-texclass="ORD">
+                    <mfrac>
+                        <mrow>
+                            <mi>Magnetic Field</mi>
+                        </mrow>
+                        <msqrt>
+                            <mi>Magnetic constant . Number density . Ion mass </mi>
+
+                        </msqrt>
+                </mrow>
+
+                </mfrac>
+                </mrow>
+
+                <mo>=</mo>
+                <mrow data-mjx-texclass="ORD">
+                    <mfrac>
+                        <mrow>
+                            <mi>B</mi>
+                        </mrow>
+                        <msqrt>
+                            <mi>&mu; . </mi>
+                            <mi>&rho; .</mi>
+                            <mi>m</mi>
+                        </msqrt>
+                </mrow>
+
+                </mfrac>
+                </mrow>
+            </math></td>
+          </tr>
+          <tr>
+            <th scope="row">Debye Lenght</th>
+            <td><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>&lambda;</mi>
+                <mo>=</mo>
+                <msqrt>
+                    <mfrac>
+                        <mn>VacuumPermittivity . BoltzmannConst . Temperature</mn>
+                        <mi>NumberDensity . <msup>
+                                <mi>ElementaryCharge</mi>
+                                <mn>2</mn>
+                            </msup>
+                        </mi>
+                    </mfrac>
+
+                </msqrt>
+                <mo>=</mo>
+                <msqrt>
+                    <mfrac>
+                        <mn>&epsilon; . k . T</mn>
+                        <mi>&mu; . <msup>
+                                <mi>e</mi>
+                                <mn>2</mn>
+                            </msup>
+                        </mi>
+                    </mfrac>
+
+                </msqrt>
+            </math></td>
+            
+          </tr>
+          <tr>
+            <th scope="row">Gyroradius</th>
+            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>
+                    <msub>
+                        <mi>r</mi>
+                        <mn>c</mn>
+                    </msub>
+                </mi>
+                <mo>=</mo>
+                <mrow data-mjx-texclass="ORD">
+                    <mfrac>
+                        <mrow>
+                            <mi>Ion mass . Bulk velocity</mi>
+                        </mrow>
+
+                        <mi>ElementaryCharge. MagneticField </mi>
+
+                        </msqrt>
+                </mrow>
+
+                </mfrac>
+                </mrow>
+
+                <mo>=</mo>
+                <mrow data-mjx-texclass="ORD">
+                    <mfrac>
+                        <mrow>
+                            <mi>m . V</mi>
+                        </mrow>
+
+                        <mi>e . B </mi>
+
+                        </msqrt>
+                </mrow>
+
+                </mfrac>
+                </mrow>
+            </math></td>
+           
+          </tr>
+          <tr>
+            <th scope="row">Electron Plasma Frequency (Quasi-neutrality)</th>
+            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>
+                    <msub>
+                        <mi>&omega;</mi>
+                        <mn>pe</mn>
+                    </msub>
+                </mi>
+                <mo>=</mo>
+                <msqrt>
+                    <mfrac>
+                        <mn>NumberDensity . <msup>
+                                <mi>ElementaryCharge</mi>
+                                <mn>2</mn>
+                            </msup>
+                        </mn>
+                        <mi>VacuumPermittivity . Ion Mass</mi>
+                    </mfrac>
+
+                </msqrt>
+                <mo>=</mo>
+                <msqrt>
+                    <mfrac>
+                        <mn>&rho; . <msup>
+                                <mi>e</mi>
+                                <mn>2</mn>
+                            </msup>
+                        </mn>
+                        <mi>&epsilon; . m</mi>
+                    </mfrac>
+
+                </msqrt>
+            </math></td>
+            
+          </tr>
+          <tr>
+            <th scope="row">Angular Frequency</th>
+            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>
+                    <msub>
+                        <mi>&omega;</mi>
+                        <mn>ci</mn>
+                    </msub>
+                </mi>
+                <mo>=</mo>
+
+                <mfrac>
+                    <mn>ElementaryCharge . MagneticField</mn>
+                    <mi>Ion Mass</mi>
+                </mfrac>
+
+
+                <mo>=</mo>
+
+                <mfrac>
+                    <mn>e . B</mn>
+                    <mi>m</mi>
+                </mfrac>
+
+
+            </math></td>
+          
+          </tr>
+          <tr>
+            <th scope="row">Gyrotime</th>
+            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>
+                    <msub>
+                        <mi>T</mi>
+                        <mn>ci</mn>
+                    </msub>
+                </mi>
+                <mo>=</mo>
+
+                <mfrac>
+                    <mn>2 . &pi;</mn>
+                    <mi>
+                        <msub>
+                            <mi>&omega;</mi>
+                            <mn>ci</mn>
+                        </msub>
+                    </mi>
+                </mfrac>
+
+            </math> </td>
+         
+          </tr>
+          <tr>
+            <th scope="row">Electron Thermal Velocity</th>
+            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>
+                    <msub>
+                        <mi>V</mi>
+                        <mn>T</mn>
+                    </msub>
+                </mi>
+                <mo>=</mo>
+                <msqrt>
+                    <mfrac>
+                        <mn>2. BoltzmannConst . Temperature </mn>
+                        <mi>Ion Mass</mi>
+                    </mfrac>
+
+                </msqrt>
+                <mo>=</mo>
+                <msqrt>
+                    <mfrac>
+                        <mn>2. k . T </mn>
+                        <mi>m</mi>
+                    </mfrac>
+
+                </msqrt>
+            </math></td>
+           
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <div id="calculator">
+        <div class="row">
+            <div class="col-5 parameters">
+                <div class="inputs">
+                <h3>Parameter Inputs</h3>
+                <p>Note that all units are done in SI</p>
+                <p>Elementary charge: e = 1.60217649 x 10-19 C</p>
+                <p>Boltzman constant: k = 1.38065042 x 10-23 J/K</p>
+                <p>Vacuum Permittivity: ε = 8.85418782 x 10-12 F/m</p>
+                <p class="last">Magnetic constant: μ = 1.25663706 x 10-6 mT/A</p>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Number Density [m-3]</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="eDensity" placeholder="i.e. 3e6">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Temperature [Ko]</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="tElec" placeholder="i.e. 1.5e5">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Magnetic Field [T]</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="bField" placeholder="i.e. 8e-9">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Bulk Velocity [m/s]</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="vBulk" placeholder="i.e. 4e5">
+                    </div>
+                </div>
+            </div>
+            <button id="convertBtn" type="button" class="btn btn-info">Calculate</button>
+        </div>
+            <div class="col-7">
+                <div id="results" class="results">
+                    <h2>Results</h2>
+                    <div class="row mb-3">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Alfven Velocity</label>
+                        <div class="col-sm-6">
+                            <input type="" class="form-control" id="i1" placeholder="m/s">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Debye Lenght</label>
+                        <div class="col-sm-6">
+                            <input type="" class="form-control" id="i2" placeholder="m">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Gyroradius</label>
+                        <div class="col-sm-6">
+                            <input type="" class="form-control" id="i3" placeholder="m">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Electron Plasma Frequency
+                            (Quasi-neutrality)</label>
+                        <div class="col-sm-6">
+                            <input type="" class="form-control" id="i4" placeholder="rad/s">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Angular Frequency</label>
+                        <div class="col-sm-6">
+                            <input type="" class="form-control" id="i5" placeholder="Hz">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Gyrotime</label>
+                        <div class="col-sm-6">
+                            <input type="" class="form-control" id="i6" placeholder="s">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Electron Thermal Velocity
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="" class="form-control" id="i7" placeholder="m/s">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="magnetosphere-earth">
+        <div class="row">
+            <div class="col-5 parameters">
+                <h2>Magnetosphere-Earth</h2>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
+                    <div class="col-sm-6">
+                        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" value="400" min="300" max="1000">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Solar wind density [cm^-3]</label>
+                    <div class="col-sm-6">
+                        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" value="7">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Terminator/nose distance ratio</label>
+                    <div class="col-sm-6">
+                        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" value="1.5">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Kappa</label>
+                    <div class="col-sm-6">
+                        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" value="0.8">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Eccentricity</label>
+                    <div class="col-sm-6">
+                        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" value="1.16">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Shock/magnetopause distance ratio</label>
+                    <div class="col-sm-6">
+                        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" value="1.38">
+                    </div>
+                </div>
+            <button id="convertBtn" type="button" class="btn btn-info">Plot</button>
+        </div>
+            <div id="plot" class="col-7">
+                
+
+            </div>
+        </div>
+    </div>
+    
+   
+    
+
+    <script src="index.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+
+</html>

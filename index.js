@@ -1,3 +1,5 @@
+
+///calculator///
 const convertBtn=document.getElementById("convertBtn")
 
 let densityEl=document.getElementById("eDensity")
@@ -11,6 +13,8 @@ const elementaryCharge=1.60217649e-19
 const boltzmannConstant=1.38065042e-23
 const vacuumPermit=8.85418782e-12
 
+
+///gets input values
 let alfven=document.getElementById("i1")
 let debye=document.getElementById("i2")
 let gyroRadius=document.getElementById("i3")
@@ -19,7 +23,7 @@ let angularFreq=document.getElementById("i5")
 let gyrotime=document.getElementById("i6")
 let thermalVelo=document.getElementById("i7")
 
-
+///shows the calculations
 convertBtn.addEventListener("click", function(){
 
      let density=densityEl.value
@@ -39,3 +43,5 @@ convertBtn.addEventListener("click", function(){
  thermalVelo.value=(Math.sqrt((2*boltzmannConstant*temperature)/(electronMass))).toExponential(4)
 
  })
+
+ //end of calculation

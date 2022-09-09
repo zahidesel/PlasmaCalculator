@@ -1,4 +1,15 @@
-
+.space, .navbar-collapse ul li a{
+    color: white!important; 
+}
+.navbar-collapse ul li a:hover{
+    color: black!important;
+}
+.dropdown-menu{
+    background-color: #4981aa!important;
+}
+di{
+    color: white!important;
+}
 .home{
     margin-top: 100px;
 }
@@ -27,6 +38,11 @@ h3{
 .inputs p{
     font-size: small;
 }
+
+.earth{
+    color: #4981aa;
+    margin-bottom: 30px;
+}
 .btn{
     color: white;
     font-weight: bolder;
@@ -50,6 +66,11 @@ margin-top: 100px;
     margin-bottom: 60px;
     color: #4981aa;
 }
-a{
-    color: white;
+#plot{
+    text-align: center;
+    color: #4981aa;
+    margin-bottom: 20px;
+}
+.footer1 {
+    margin-top: 50px;
 }

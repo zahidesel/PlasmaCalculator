@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
+    <title>Space Pyhsics Course</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
@@ -14,6 +16,8 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+  
+
 </head>
 
 <body>
@@ -22,7 +26,7 @@
             <a class="navbar-brand" href="#">
                 <img src="sun.png" alt="" width="50" height="40">
             </a>
-            <a class="navbar-brand" href="#">Space Physics</a>
+            <a class="navbar-brand space" href="#">Space Physics</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -41,16 +45,16 @@
                             Magnetosphere
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#magnetosphere">Earth</a></li>
-                            <li><a class="dropdown-item" href="#">Mars</a></li>
-                            <li><a class="dropdown-item" href="#">Jupiter</a></li>
-                            <li><a class="dropdown-item" href="#">Saturn</a></li>
-                            <li><a class="dropdown-item" href="#">Uranus</a></li>
-                            <li><a class="dropdown-item" href="#">Neptune</a></li>
+                            <li><a class="dropdown-item" href="#magnetosphere-earth">Earth</a></li>
+                            <li id="mars"><a  class="dropdown-item di" href="#">Mars</a></li>
+                            <li id="jupiter"><a class="dropdown-item di" href="#">Jupiter</a></li>
+                            <li id="saturn"><a class="dropdown-item di" href="#">Saturn</a></li>
+                            <li id="uranus"><a class="dropdown-item di" href="#">Uranus</a></li>
+                            <li id="neptune"><a class="dropdown-item di" href="#">Neptune</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -295,7 +299,6 @@
           </tr>
         </tbody>
       </table>
-
     </div>
     <div id="calculator">
         <div class="row">
@@ -308,13 +311,13 @@
                 <p>Vacuum Permittivity: ε = 8.85418782 x 10-12 F/m</p>
                 <p class="last">Magnetic constant: μ = 1.25663706 x 10-6 mT/A</p>
                 <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Number Density [m-3]</label>
+                    <label for="formGroupExampleInput2" class="form-label">Number Density [m<sup>-3</sup>]</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" id="eDensity" placeholder="i.e. 3e6">
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Temperature [Ko]</label>
+                    <label for="formGroupExampleInput2" class="form-label">Temperature [K<sup>o</sup>]</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" id="tElec" placeholder="i.e. 1.5e5">
                     </div>
@@ -389,58 +392,94 @@
     <div id="magnetosphere-earth">
         <div class="row">
             <div class="col-5 parameters">
-                <h2>Magnetosphere-Earth</h2>
+                <h2 class="earth">Magnetosphere-Earth</h2>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" value="400" min="300" max="1000">
+                        <input type="number" class="form-control" id="Input1" placeholder="" value="400" onblur="this.value = minMax(this, this.value)" min="300" max="1000">
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Solar wind density [cm^-3]</label>
+                    <label for="formGroupExampleInput2" class="form-label">Solar wind density [cm<sup>-3</sup>]</label>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" value="7">
+                        <input type="number" class="form-control" id="Input2" placeholder="" value="7" onblur="this.value = minMax(this, this.value)" min="1" max="20">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Terminator/nose distance ratio</label>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" value="1.5">
+                        <input type="number" class="form-control" id="Input3" placeholder="" value="1.5" onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Kappa</label>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" value="0.8">
+                        <input type="number" class="form-control" id="Input4" placeholder="" value="0.8" onblur="this.value = minMax(this, this.value)" min="0.5" max="1">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Eccentricity</label>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" value="1.16">
+                        <input type="number" class="form-control" id="Input5" placeholder="" value="1.16" onblur="this.value = minMax(this, this.value)" min="1" max="2">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Shock/magnetopause distance ratio</label>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="" value="1.38">
+                        <input type="number" class="form-control" id="Input6" placeholder="" value="1.38" onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
                     </div>
                 </div>
-            <button id="convertBtn" type="button" class="btn btn-info">Plot</button>
+            <button id="plotBtn" type="button" class="btn btn-info">Plot</button>
         </div>
-            <div id="plot" class="col-7">
-                
+            <div id="plot" class="col-7">Plot comes here
+            
 
             </div>
         </div>
     </div>
     
-   
+   <div class="footer1" id="contact">
+    <footer class="text-center text-white" style="background-color: #4981aa;">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: CTA -->
+          <section class="">
+            <p class="">
+            <i class="fas fa-home me-3"></i><span style="margin-right: 20px;"> Maarintie 8,
+            02150, Espoo, Finland</span>
+            <i class="fas fa-envelope me-3"></i>
+           <span style="margin-right: 20px;"> esa.kallio@aalto.fi</span>
+          <i class="fas fa-phone me-3"></i> <span style="margin-right: 20px;">+358504205857</span>
+         
+              <!-- <span class="me-3">Register for free</span>
+              <button type="button" class="btn btn-outline-light btn-rounded">
+                Sign up!
+              </button> -->
+        
+          </section>
+          <!-- Section: CTA -->
+        </div>
+        <!-- Grid container -->
+    
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <a class="text-white" href="https://people.aalto.fi/esa.kallio" target="_blank">Esa Kallio</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+    </section>
+   </div>
     
 
     <script src="index.js"></script>
+    <script src="index2.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="lodash.js"></script>
 </body>
 
 </html>

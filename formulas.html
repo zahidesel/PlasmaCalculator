@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Space Pyhsics Course</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+  
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4981aa;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="sun.png" alt="" width="50" height="40">
+            </a>
+            <a class="navbar-brand space" href="#">Space Physics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home Page</a>
+                    </li>
+                  
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+      <div class="formuls">
+    <table class="table table-striped">
+        <thead>
+         
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Alfven Velocity</th>
+            <td><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>V</mi>
+                <mo>=</mo>
+                <mrow data-mjx-texclass="ORD">
+                    <mfrac>
+                        <mrow>
+                            <mi>Magnetic Field</mi>
+                        </mrow>
+                        <msqrt>
+                            <mi>Magnetic constant . Number density . Ion mass </mi>
+
+                        </msqrt>
+                </mrow>
+
+                </mfrac>
+                </mrow>
+
+                <mo>=</mo>
+                <mrow data-mjx-texclass="ORD">
+                    <mfrac>
+                        <mrow>
+                            <mi>B</mi>
+                        </mrow>
+                        <msqrt>
+                            <mi>&mu; . </mi>
+                            <mi>&rho; .</mi>
+                            <mi>m</mi>
+                        </msqrt>
+                </mrow>
+
+                </mfrac>
+                </mrow>
+            </math></td>
+          </tr>
+          <tr>
+            <th scope="row">Debye Lenght</th>
+            <td><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>&lambda;</mi>
+                <mo>=</mo>
+                <msqrt>
+                    <mfrac>
+                        <mn>VacuumPermittivity . BoltzmannConst . Temperature</mn>
+                        <mi>NumberDensity . <msup>
+                                <mi>ElementaryCharge</mi>
+                                <mn>2</mn>
+                            </msup>
+                        </mi>
+                    </mfrac>
+
+                </msqrt>
+                <mo>=</mo>
+                <msqrt>
+                    <mfrac>
+                        <mn>&epsilon; . k . T</mn>
+                        <mi>&mu; . <msup>
+                                <mi>e</mi>
+                                <mn>2</mn>
+                            </msup>
+                        </mi>
+                    </mfrac>
+
+                </msqrt>
+            </math></td>
+            
+          </tr>
+          <tr>
+            <th scope="row">Gyroradius</th>
+            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>
+                    <msub>
+                        <mi>r</mi>
+                        <mn>c</mn>
+                    </msub>
+                </mi>
+                <mo>=</mo>
+                <mrow data-mjx-texclass="ORD">
+                    <mfrac>
+                        <mrow>
+                            <mi>Ion mass . Bulk velocity</mi>
+                        </mrow>
+
+                        <mi>ElementaryCharge. MagneticField </mi>
+
+                        </msqrt>
+                </mrow>
+
+                </mfrac>
+                </mrow>
+
+                <mo>=</mo>
+                <mrow data-mjx-texclass="ORD">
+                    <mfrac>
+                        <mrow>
+                            <mi>m . V</mi>
+                        </mrow>
+
+                        <mi>e . B </mi>
+
+                        </msqrt>
+                </mrow>
+
+                </mfrac>
+                </mrow>
+            </math></td>
+           
+          </tr>
+          <tr>
+            <th scope="row">Electron Plasma Frequency (Quasi-neutrality)</th>
+            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>
+                    <msub>
+                        <mi>&omega;</mi>
+                        <mn>pe</mn>
+                    </msub>
+                </mi>
+                <mo>=</mo>
+                <msqrt>
+                    <mfrac>
+                        <mn>NumberDensity . <msup>
+                                <mi>ElementaryCharge</mi>
+                                <mn>2</mn>
+                            </msup>
+                        </mn>
+                        <mi>VacuumPermittivity . Ion Mass</mi>
+                    </mfrac>
+
+                </msqrt>
+                <mo>=</mo>
+                <msqrt>
+                    <mfrac>
+                        <mn>&rho; . <msup>
+                                <mi>e</mi>
+                                <mn>2</mn>
+                            </msup>
+                        </mn>
+                        <mi>&epsilon; . m</mi>
+                    </mfrac>
+
+                </msqrt>
+            </math></td>
+            
+          </tr>
+          <tr>
+            <th scope="row">Angular Frequency</th>
+            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>
+                    <msub>
+                        <mi>&omega;</mi>
+                        <mn>ci</mn>
+                    </msub>
+                </mi>
+                <mo>=</mo>
+
+                <mfrac>
+                    <mn>ElementaryCharge . MagneticField</mn>
+                    <mi>Ion Mass</mi>
+                </mfrac>
+
+
+                <mo>=</mo>
+
+                <mfrac>
+                    <mn>e . B</mn>
+                    <mi>m</mi>
+                </mfrac>
+
+
+            </math></td>
+          
+          </tr>
+          <tr>
+            <th scope="row">Gyrotime</th>
+            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>
+                    <msub>
+                        <mi>T</mi>
+                        <mn>ci</mn>
+                    </msub>
+                </mi>
+                <mo>=</mo>
+
+                <mfrac>
+                    <mn>2 . &pi;</mn>
+                    <mi>
+                        <msub>
+                            <mi>&omega;</mi>
+                            <mn>ci</mn>
+                        </msub>
+                    </mi>
+                </mfrac>
+
+            </math> </td>
+         
+          </tr>
+          <tr>
+            <th scope="row">Electron Thermal Velocity</th>
+            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>
+                    <msub>
+                        <mi>V</mi>
+                        <mn>T</mn>
+                    </msub>
+                </mi>
+                <mo>=</mo>
+                <msqrt>
+                    <mfrac>
+                        <mn>2. BoltzmannConst . Temperature </mn>
+                        <mi>Ion Mass</mi>
+                    </mfrac>
+
+                </msqrt>
+                <mo>=</mo>
+                <msqrt>
+                    <mfrac>
+                        <mn>2. k . T </mn>
+                        <mi>m</mi>
+                    </mfrac>
+
+                </msqrt>
+            </math></td>
+           
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+   <div class="footer1" id="contact">
+    <footer class="text-center text-white" style="background-color: #4981aa;">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: CTA -->
+          <section class="">
+            <p class="">
+            <i class="fas fa-home me-3"></i><span style="margin-right: 20px;"> Maarintie 8,
+            02150, Espoo, Finland</span>
+            <i class="fas fa-envelope me-3"></i>
+           <span style="margin-right: 20px;"> esa.kallio@aalto.fi</span>
+          <i class="fas fa-phone me-3"></i> <span style="margin-right: 20px;">+358504205857</span>
+         
+              <!-- <span class="me-3">Register for free</span>
+              <button type="button" class="btn btn-outline-light btn-rounded">
+                Sign up!
+              </button> -->
+        
+          </section>
+          <!-- Section: CTA -->
+        </div>
+        <!-- Grid container -->
+    
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <a class="text-white" href="https://people.aalto.fi/esa.kallio" target="_blank">Esa Kallio</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+    </section>
+   </div>
+    
+
+    <script src="index.js"></script>
+    <script src="index2.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="lodash.js"></script>
+</body>
+
+</html>

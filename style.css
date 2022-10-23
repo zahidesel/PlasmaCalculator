@@ -4,12 +4,6 @@
 .navbar-collapse ul li a:hover{
     color: black!important;
 }
-.dropdown-menu{
-    background-color: #4981aa!important;
-}
-di{
-    color: white!important;
-}
 .home{
     margin-top: 100px;
 }
@@ -21,6 +15,15 @@ di{
     text-align: justify;
     padding: 75px;
 }
+.home p a{
+   color: #4981aa;  
+   text-decoration: underline; 
+   font-weight: 700;
+}
+.home p a:hover{
+    color: black;  
+    
+ }
 .formuls{
     padding: 75px;
 }
@@ -46,6 +49,16 @@ h3{
 .btn{
     color: white;
     font-weight: bolder;
+    
+}
+.btn a{
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.btn a:hover{
+    color: black;
+  
 }
 .last{
     margin-bottom: 30px;
@@ -73,4 +86,30 @@ margin-top: 100px;
 }
 .footer1 {
     margin-top: 50px;
+}
+.info-btn{
+    text-align: center;
+    margin-bottom: 100px;
+    
+}
+.plnt li a{
+    color: white!important;
+}
+.plnt li a:hover{
+    color: black!important;
+}
+
+.noneEarth, .noneMars, .noneJupiter , .noneSaturn, .noneUranus, .noneNeptune {
+    display: none;
+}
+
+
+.description{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.card-text{
+line-height: 2rem;
 }

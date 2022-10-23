@@ -1,25 +1,25 @@
-const plotButton=document.getElementById("plotBtn")
+const plotButtonUranus=document.getElementById("plotBtnUranus")
 
 ////////// INPUTS FROM USER ///////////////
-let u_swEl= document.getElementById("Input1")
-let n_swEl=document.getElementById("Input2")
-let roEl=document.getElementById("Input3")
-let kappaEl=document.getElementById("Input4")
-let eccEl=document.getElementById("Input5")
-let bsEl=document.getElementById("Input6")
+let u_swEl_U= document.getElementById("Input1U")
+let n_swEl_U=document.getElementById("Input2U")
+let roEl_U=document.getElementById("Input3U")
+let kappaEl_U=document.getElementById("Input4U")
+let eccEl_U=document.getElementById("Input5U")
+let bsEl_U=document.getElementById("Input6U")
 
 
 
 ////Clicking the Plot button makes the Plot visible///////////////
 
-plotButton.addEventListener("click", function(){
+plotButtonUranus.addEventListener("click", function(){
 
-  let u_sw=parseFloat(u_swEl.value)
-  let n_sw=parseFloat(n_swEl.value)
-  let ro=parseFloat(roEl.value)
-  let kappa=parseFloat(kappaEl.value)
-  let ecc=parseFloat(eccEl.value)
-  let bs=parseFloat(bsEl.value)
+  let u_sw=parseFloat(u_swEl_U.value)
+  let n_sw=parseFloat(n_swEl_U.value)
+  let ro=parseFloat(roEl_U.value)
+  let kappa=parseFloat(kappaEl_U.value)
+  let ecc=parseFloat(eccEl_U.value)
+  let bs=parseFloat(bsEl_U.value)
   
 
 console.log(u_sw)
@@ -119,18 +119,19 @@ let data = [{
     fill:'toself',
     color:'#10CA7E',
     fillcolor:'#10CA7E',
-    name:'Earth'
+    name:'Uranus'
    }
 
 ]
 let layout = {
-    title: 'EARTH',
+    title: 'URANUS',
     height: 800,
     width: 800,
     font: {size: 13}, 
     barmode: 'relative',
-    yaxis: {title: 'Y [R<sub>Earth</sub>]', range: [-25, 25], dtick: 5},
-    xaxis: {title: 'X [R<sub>Earth</sub>]', range: [-25, 25]}};
+    paper_bgcolor: '#bed',
+    yaxis: {title: 'Y [R<sub>Uranus</sub>]', range: [-25, 25], dtick: 5},
+    xaxis: {title: 'X [R<sub>Uranus</sub>]', range: [-25, 25]}};
 let config = {responsive: true};
 
 
@@ -142,34 +143,18 @@ Plotly.newPlot('plot', data, layout, config);
 
 ////end of plot function///////////////////
 
-
-
 //// Function for the magnetosphere Max-Min input values ////////////////
 function minMax(that, value){
-  let min = parseFloat(that.getAttribute("min"))
-  let max= parseFloat(that.getAttribute("max"))
-  let val=parseFloat(value)
-
-  if( val<min || isNaN(val)){
-    return min
-  } else if(val> max){
-    return max
-  } else {
-    return val;
+    let min = parseFloat(that.getAttribute("min"))
+    let max= parseFloat(that.getAttribute("max"))
+    let val=parseFloat(value)
+  
+    if( val<min || isNaN(val)){
+      return min
+    } else if(val> max){
+      return max
+    } else {
+      return val;
+    }
   }
-}
-
-
-//function for alerting the non-existing plots for planets
-
-
-const giveAlert=document.getElementById("mars")
-giveAlert.addEventListener('click', function(){alert('Mars to be done!')})
-const giveAlert1=document.getElementById("jupiter")
-giveAlert1.addEventListener('click', function(){alert('Jupiter to be done!')})
-const giveAlert2=document.getElementById("saturn")
-giveAlert2.addEventListener('click', function(){alert('Saturn to be done!')})
-const giveAlert3=document.getElementById("uranus")
-giveAlert3.addEventListener('click', function(){alert('Uranus to be done!')})
-const giveAlert4=document.getElementById("neptune")
-giveAlert4.addEventListener('click', function(){alert('Neptune to be done!')})
+  

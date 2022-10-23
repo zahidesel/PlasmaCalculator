@@ -16,7 +16,7 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-  
+
 
 </head>
 
@@ -39,19 +39,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#calculator">Calculator</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Magnetosphere
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#magnetosphere-earth">Earth</a></li>
-                            <li id="mars"><a  class="dropdown-item di" href="#">Mars</a></li>
-                            <li id="jupiter"><a class="dropdown-item di" href="#">Jupiter</a></li>
-                            <li id="saturn"><a class="dropdown-item di" href="#">Saturn</a></li>
-                            <li id="uranus"><a class="dropdown-item di" href="#">Uranus</a></li>
-                            <li id="neptune"><a class="dropdown-item di" href="#">Neptune</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#magnetosphere-earth">Bow Shock and the Magnetopause</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -62,281 +51,50 @@
     </nav>
     <div id="home" class="home">
         <h1>Plasma Parameters Calculator</h1>
-        <p>Plasma describes a state of matter in which the charged particles of decomposed atoms become a collective
+        <p style="line-height: 2.3;">Plasma describes a state of matter in which the charged particles of decomposed atoms become a collective
             assemblage, where none of the particles are actually free, but strongly affected by the EM fields of each
             neighbor particle. The system of charged particles responds collectively to electromagnetic forces. <br>
-            This calculator will compute the values for:</p>
-    </div>
-      <div class="formuls">
-    <table class="table table-striped">
-        <thead>
-         
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Alfven Velocity</th>
-            <td><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                <mi>V</mi>
-                <mo>=</mo>
-                <mrow data-mjx-texclass="ORD">
-                    <mfrac>
-                        <mrow>
-                            <mi>Magnetic Field</mi>
-                        </mrow>
-                        <msqrt>
-                            <mi>Magnetic constant . Number density . Ion mass </mi>
-
-                        </msqrt>
-                </mrow>
-
-                </mfrac>
-                </mrow>
-
-                <mo>=</mo>
-                <mrow data-mjx-texclass="ORD">
-                    <mfrac>
-                        <mrow>
-                            <mi>B</mi>
-                        </mrow>
-                        <msqrt>
-                            <mi>&mu; . </mi>
-                            <mi>&rho; .</mi>
-                            <mi>m</mi>
-                        </msqrt>
-                </mrow>
-
-                </mfrac>
-                </mrow>
-            </math></td>
-          </tr>
-          <tr>
-            <th scope="row">Debye Lenght</th>
-            <td><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                <mi>&lambda;</mi>
-                <mo>=</mo>
-                <msqrt>
-                    <mfrac>
-                        <mn>VacuumPermittivity . BoltzmannConst . Temperature</mn>
-                        <mi>NumberDensity . <msup>
-                                <mi>ElementaryCharge</mi>
-                                <mn>2</mn>
-                            </msup>
-                        </mi>
-                    </mfrac>
-
-                </msqrt>
-                <mo>=</mo>
-                <msqrt>
-                    <mfrac>
-                        <mn>&epsilon; . k . T</mn>
-                        <mi>&mu; . <msup>
-                                <mi>e</mi>
-                                <mn>2</mn>
-                            </msup>
-                        </mi>
-                    </mfrac>
-
-                </msqrt>
-            </math></td>
-            
-          </tr>
-          <tr>
-            <th scope="row">Gyroradius</th>
-            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                <mi>
-                    <msub>
-                        <mi>r</mi>
-                        <mn>c</mn>
-                    </msub>
-                </mi>
-                <mo>=</mo>
-                <mrow data-mjx-texclass="ORD">
-                    <mfrac>
-                        <mrow>
-                            <mi>Ion mass . Bulk velocity</mi>
-                        </mrow>
-
-                        <mi>ElementaryCharge. MagneticField </mi>
-
-                        </msqrt>
-                </mrow>
-
-                </mfrac>
-                </mrow>
-
-                <mo>=</mo>
-                <mrow data-mjx-texclass="ORD">
-                    <mfrac>
-                        <mrow>
-                            <mi>m . V</mi>
-                        </mrow>
-
-                        <mi>e . B </mi>
-
-                        </msqrt>
-                </mrow>
-
-                </mfrac>
-                </mrow>
-            </math></td>
-           
-          </tr>
-          <tr>
-            <th scope="row">Electron Plasma Frequency (Quasi-neutrality)</th>
-            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                <mi>
-                    <msub>
-                        <mi>&omega;</mi>
-                        <mn>pe</mn>
-                    </msub>
-                </mi>
-                <mo>=</mo>
-                <msqrt>
-                    <mfrac>
-                        <mn>NumberDensity . <msup>
-                                <mi>ElementaryCharge</mi>
-                                <mn>2</mn>
-                            </msup>
-                        </mn>
-                        <mi>VacuumPermittivity . Ion Mass</mi>
-                    </mfrac>
-
-                </msqrt>
-                <mo>=</mo>
-                <msqrt>
-                    <mfrac>
-                        <mn>&rho; . <msup>
-                                <mi>e</mi>
-                                <mn>2</mn>
-                            </msup>
-                        </mn>
-                        <mi>&epsilon; . m</mi>
-                    </mfrac>
-
-                </msqrt>
-            </math></td>
-            
-          </tr>
-          <tr>
-            <th scope="row">Angular Frequency</th>
-            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                <mi>
-                    <msub>
-                        <mi>&omega;</mi>
-                        <mn>ci</mn>
-                    </msub>
-                </mi>
-                <mo>=</mo>
-
-                <mfrac>
-                    <mn>ElementaryCharge . MagneticField</mn>
-                    <mi>Ion Mass</mi>
-                </mfrac>
-
-
-                <mo>=</mo>
-
-                <mfrac>
-                    <mn>e . B</mn>
-                    <mi>m</mi>
-                </mfrac>
-
-
-            </math></td>
-          
-          </tr>
-          <tr>
-            <th scope="row">Gyrotime</th>
-            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                <mi>
-                    <msub>
-                        <mi>T</mi>
-                        <mn>ci</mn>
-                    </msub>
-                </mi>
-                <mo>=</mo>
-
-                <mfrac>
-                    <mn>2 . &pi;</mn>
-                    <mi>
-                        <msub>
-                            <mi>&omega;</mi>
-                            <mn>ci</mn>
-                        </msub>
-                    </mi>
-                </mfrac>
-
-            </math> </td>
-         
-          </tr>
-          <tr>
-            <th scope="row">Electron Thermal Velocity</th>
-            <td colspan="2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                <mi>
-                    <msub>
-                        <mi>V</mi>
-                        <mn>T</mn>
-                    </msub>
-                </mi>
-                <mo>=</mo>
-                <msqrt>
-                    <mfrac>
-                        <mn>2. BoltzmannConst . Temperature </mn>
-                        <mi>Ion Mass</mi>
-                    </mfrac>
-
-                </msqrt>
-                <mo>=</mo>
-                <msqrt>
-                    <mfrac>
-                        <mn>2. k . T </mn>
-                        <mi>m</mi>
-                    </mfrac>
-
-                </msqrt>
-            </math></td>
-           
-          </tr>
-        </tbody>
-      </table>
+            This calculator will compute the values for: Alfven Velocity, Debye Length, Gyroradius, Electron Plasma
+            Frequency, Angular Frequency, Gyrotime, and ElectronThermal Velocity. <br> To see how these plasma
+            parameters are calculated please click the  <a href="formulas.html" target="_blank">info </a> link.</p>
     </div>
     <div id="calculator">
         <div class="row">
             <div class="col-5 parameters">
                 <div class="inputs">
-                <h3>Parameter Inputs</h3>
-                <p>Note that all units are done in SI</p>
-                <p>Elementary charge: e = 1.60217649 x 10-19 C</p>
-                <p>Boltzman constant: k = 1.38065042 x 10-23 J/K</p>
-                <p>Vacuum Permittivity: ε = 8.85418782 x 10-12 F/m</p>
-                <p class="last">Magnetic constant: μ = 1.25663706 x 10-6 mT/A</p>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Number Density [m<sup>-3</sup>]</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="eDensity" placeholder="i.e. 3e6">
+                    <h3>Parameter Inputs</h3>
+                    <p>Note that all units are done in SI</p>
+                    <p>Elementary charge: e = 1.60217649e-19 C</p>
+                    <p>Boltzman constant: k = 1.38065042e-23 J/K</p>
+                    <p>Vacuum Permittivity: ε = 8.85418782e-12 F/m</p>
+                    <p class="last">Magnetic constant: μ = 1.25663706e-6 mT/A</p>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Number Density [m<sup>-3</sup>]</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="eDensity" placeholder="i.e. 3e6">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Temperature [K<sup>o</sup>]</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="tElec" placeholder="i.e. 1.5e5">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Magnetic Field [T]</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="bField" placeholder="i.e. 8e-9">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Bulk Velocity [m/s]</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="vBulk" placeholder="i.e. 4e5">
+                        </div>
                     </div>
                 </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Temperature [K<sup>o</sup>]</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="tElec" placeholder="i.e. 1.5e5">
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Magnetic Field [T]</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="bField" placeholder="i.e. 8e-9">
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Bulk Velocity [m/s]</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="vBulk" placeholder="i.e. 4e5">
-                    </div>
-                </div>
+                <button id="convertBtn" type="button" class="btn btn-info">Calculate</button>
             </div>
-            <button id="convertBtn" type="button" class="btn btn-info">Calculate</button>
-        </div>
             <div class="col-7">
                 <div id="results" class="results">
                     <h2>Results</h2>
@@ -391,95 +149,370 @@
     </div>
     <div id="magnetosphere-earth">
         <div class="row">
-            <div class="col-5 parameters">
-                <h2 class="earth">Magnetosphere-Earth</h2>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control" id="Input1" placeholder="" value="400" onblur="this.value = minMax(this, this.value)" min="300" max="1000">
+            <div class="col-6 parameters">
+                <h2 class="earth">Bow Shock and the Magnetopause</h2>
+                <select class="form-select" aria-label="Default select example" 
+                onchange="enableBrand(this)"
+                style="background-color: #4981aa; width: 200px; margin-bottom: 50px; padding: 10px; color: white; font-weight: 600;">
+                    <option selected>Planets</option>
+                    <option value="1">Earth</option>
+                    <option value="2">Mars</option>
+                    <option value="3">Jupiter</option>
+                    <option value="4">Saturn</option>
+                    <option value="5">Uranus</option>
+                    <option value="6">Neptune</option>
+                  </select>
+                
+                <!--EARTH HTML PART-->
+                <div id="earthDiv" class="noneEarth" >
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input1" placeholder="300-1000" value="400"
+                                onblur="this.value = minMax(this, this.value)" min="300" max="1000">
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Solar wind density [cm<sup>-3</sup>]</label>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control" id="Input2" placeholder="" value="7" onblur="this.value = minMax(this, this.value)" min="1" max="20">
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Solar wind density
+                            [cm<sup>-3</sup>]</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input2" placeholder="1-20" value="7"
+                                onblur="this.value = minMax(this, this.value)" min="1" max="20">
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Terminator/nose distance ratio</label>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control" id="Input3" placeholder="" value="1.5" onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Terminator/nose distance ratio</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input3" placeholder="1.1-2" value="1.5"
+                                onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Kappa</label>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control" id="Input4" placeholder="" value="0.8" onblur="this.value = minMax(this, this.value)" min="0.5" max="1">
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Kappa</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input4" placeholder="0.5-1" value="0.8"
+                                onblur="this.value = minMax(this, this.value)" min="0.5" max="1">
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Eccentricity</label>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control" id="Input5" placeholder="" value="1.16" onblur="this.value = minMax(this, this.value)" min="1" max="2">
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Eccentricity</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input5" placeholder="1-2" value="1.16"
+                                onblur="this.value = minMax(this, this.value)" min="1" max="2">
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Shock/magnetopause distance ratio</label>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control" id="Input6" placeholder="" value="1.38" onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Shock/magnetopause distance ratio</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input6" placeholder="1.1-2" value="1.38"
+                                onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                        </div>
                     </div>
+                    <button id="plotBtn" type="button" class="btn btn-info">Plot</button>
+                    <button type="button" class="btn btn-info"> <a href="descriptionsEarth.html" target="_blank"> Info </a></button>
                 </div>
-            <button id="plotBtn" type="button" class="btn btn-info">Plot</button>
-        </div>
-            <div id="plot" class="col-7">Plot comes here
-            
 
+                <!--MARS HTML PART-->
+                <div id="marsDiv" class="noneMars" >
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input1M" placeholder="300-1000" value="300"
+                                onblur="this.value = minMax(this, this.value)" min="300" max="1000">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Solar wind density
+                            [cm<sup>-3</sup>]</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input2M" placeholder="1-20" value="6"
+                                onblur="this.value = minMax(this, this.value)" min="1" max="20">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Terminator/nose distance ratio</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input3M" placeholder="1.1-2" value="1.3"
+                                onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Kappa</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input4M" placeholder="0.5-1" value="0.9"
+                                onblur="this.value = minMax(this, this.value)" min="0.5" max="1">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Eccentricity</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input5M" placeholder="1-2" value="1.12"
+                                onblur="this.value = minMax(this, this.value)" min="1" max="2">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Shock/magnetopause distance ratio</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input6M" placeholder="1.1-2" value="1.40"
+                                onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                        </div>
+                    </div>
+                    <button id="plotBtnMars" type="button" class="btn btn-info">Plot</button>
+                    <button type="button" class="btn btn-info">Info</button>
+                </div>
+
+                <!--JUPITER HTML PART-->
+                <div id="jupiterDiv" class="noneJupiter" >
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input1J" placeholder="200-1000" value="250"
+                                onblur="this.value = minMax(this, this.value)" min="200" max="1000">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Solar wind density
+                            [cm<sup>-3</sup>]</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input2J" placeholder="1-20" value="5"
+                                onblur="this.value = minMax(this, this.value)" min="1" max="20">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Terminator/nose distance ratio</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input3J" placeholder="1.1-2" value="1.3"
+                                onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Kappa</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input4J" placeholder="0.5-1" value="0.9"
+                                onblur="this.value = minMax(this, this.value)" min="0.5" max="1">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Eccentricity</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input5J" placeholder="1-2" value="1.12"
+                                onblur="this.value = minMax(this, this.value)" min="1" max="2">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Shock/magnetopause distance ratio</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input6J" placeholder="1.1-2" value="1.40"
+                                onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                        </div>
+                    </div>
+                    <button id="plotBtnJupiter" type="button" class="btn btn-info">Plot</button>
+                    <button type="button" class="btn btn-info">Info</button>
+                 
+                </div>
+
+                <!--SATURN DIV-->
+                <div id="saturnDiv" class="noneSaturn" >
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input1S" placeholder="200-1000" value="250"
+                                onblur="this.value = minMax(this, this.value)" min="200" max="1000">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Solar wind density
+                            [cm<sup>-3</sup>]</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input2S" placeholder="1-20" value="5"
+                                onblur="this.value = minMax(this, this.value)" min="1" max="20">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Terminator/nose distance ratio</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input3S" placeholder="1.1-2" value="1.3"
+                                onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Kappa</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input4S" placeholder="0.5-1" value="0.9"
+                                onblur="this.value = minMax(this, this.value)" min="0.5" max="1">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Eccentricity</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input5S" placeholder="1-2" value="1.12"
+                                onblur="this.value = minMax(this, this.value)" min="1" max="2">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Shock/magnetopause distance ratio</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input6S" placeholder="1.1-2" value="1.40"
+                                onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                        </div>
+                    </div>
+                    <button id="plotBtnSaturn" type="button" class="btn btn-info">Plot</button>
+                    <button type="button" class="btn btn-info">Info</button>
+                </div>
+
+                <!--URANUS DIV-->
+                <div id="uranusDiv" class="noneUranus" >
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input1U" placeholder="200-1000" value="250"
+                                onblur="this.value = minMax(this, this.value)" min="200" max="1000">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Solar wind density
+                            [cm<sup>-3</sup>]</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input2U" placeholder="1-20" value="5"
+                                onblur="this.value = minMax(this, this.value)" min="1" max="20">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Terminator/nose distance ratio</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input3U" placeholder="1.1-2" value="1.3"
+                                onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Kappa</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input4U" placeholder="0.5-1" value="0.9"
+                                onblur="this.value = minMax(this, this.value)" min="0.5" max="1">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Eccentricity</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input5U" placeholder="1-2" value="1.12"
+                                onblur="this.value = minMax(this, this.value)" min="1" max="2">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Shock/magnetopause distance ratio</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input6U" placeholder="1.1-2" value="1.40"
+                                onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                        </div>
+                    </div>
+                    <button id="plotBtnUranus" type="button" class="btn btn-info">Plot</button>
+                    <button type="button" class="btn btn-info">Info</button>
+                </div>
+
+                   <!--NEPTUNE DIV-->
+                   <div id="neptuneDiv" class="noneNeptune" >
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input1N" placeholder="200-1000" value="250"
+                                onblur="this.value = minMax(this, this.value)" min="200" max="1000">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Solar wind density
+                            [cm<sup>-3</sup>]</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input2N" placeholder="1-20" value="5"
+                                onblur="this.value = minMax(this, this.value)" min="1" max="20">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Terminator/nose distance ratio</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input3N" placeholder="1.1-2" value="1.3"
+                                onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Kappa</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input4N" placeholder="0.5-1" value="0.9"
+                                onblur="this.value = minMax(this, this.value)" min="0.5" max="1">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Eccentricity</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input5N" placeholder="1-2" value="1.12"
+                                onblur="this.value = minMax(this, this.value)" min="1" max="2">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Shock/magnetopause distance ratio</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Input6N" placeholder="1.1-2" value="1.40"
+                                onblur="this.value = minMax(this, this.value)" min="1.1" max="2">
+                        </div>
+                    </div>
+                    <button id="plotBtnNeptune" type="button" class="btn btn-info">Plot</button>
+                    <button type="button" class="btn btn-info">Info</button>
+                </div>
+               
             </div>
+
+            <!--PLOT DIVISION -->
+           <div id="plot" class="col-6"></div> 
         </div>
     </div>
-    
-   <div class="footer1" id="contact">
-    <footer class="text-center text-white" style="background-color: #4981aa;">
-        <!-- Grid container -->
-        <div class="container p-4 pb-0">
-          <!-- Section: CTA -->
-          <section class="">
-            <p class="">
-            <i class="fas fa-home me-3"></i><span style="margin-right: 20px;"> Maarintie 8,
-            02150, Espoo, Finland</span>
-            <i class="fas fa-envelope me-3"></i>
-           <span style="margin-right: 20px;"> esa.kallio@aalto.fi</span>
-          <i class="fas fa-phone me-3"></i> <span style="margin-right: 20px;">+358504205857</span>
-         
-              <!-- <span class="me-3">Register for free</span>
+
+    <div class="footer1" id="contact">
+        <footer class="text-center text-white" style="background-color: #4981aa;">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                <!-- Section: CTA -->
+                <section class="">
+                    <p class="">
+                        <i class="fas fa-home me-3"></i><span style="margin-right: 20px;"> Maarintie 8,
+                            02150, Espoo, Finland</span>
+                        <i class="fas fa-envelope me-3"></i>
+                        <span style="margin-right: 20px;"> esa.kallio@aalto.fi</span>
+                        <i class="fas fa-phone me-3"></i> <span style="margin-right: 20px;">+358504205857</span>
+
+                        <!-- <span class="me-3">Register for free</span>
               <button type="button" class="btn btn-outline-light btn-rounded">
                 Sign up!
               </button> -->
-        
-          </section>
-          <!-- Section: CTA -->
-        </div>
-        <!-- Grid container -->
-    
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2022 Copyright:
-          <a class="text-white" href="https://people.aalto.fi/esa.kallio" target="_blank">Esa Kallio</a>
-        </div>
-        <!-- Copyright -->
-      </footer>
-      <!-- Footer -->
-    </section>
-   </div>
-    
+
+                </section>
+                <!-- Section: CTA -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright:
+                <a class="text-white" href="https://people.aalto.fi/esa.kallio" target="_blank">Esa Kallio</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+        </section>
+    </div>
+
 
     <script src="index.js"></script>
-    <script src="index2.js"></script>
+    <script src="earth.js"></script>
+    <script src="mars.js"></script>
+    <script src="jupiter.js"></script>
+    <script src="saturn.js"></script>
+    <script src="uranus.js"></script>
+    <script src="neptune.js"></script>
+
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="lodash.js"></script>
+
 </body>
 
 </html>

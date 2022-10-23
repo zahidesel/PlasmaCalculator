@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Space Pyhsics Course</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4981aa;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="sun.png" alt="" width="50" height="40">
+            </a>
+            <a class="navbar-brand space" href="#">Space Physics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home Page</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="row description">
+        <div class="col-sm-6">
+            <h3>Magnetopause</h3>
+            <p class="card-text"> <span style="color: red; font-weight: bolder; ">Shape:</span> A paraboloid (a rotated parabola about the
+              x-axis), <br>
+
+              <span style="color: red; font-weight: bolder;  ">Functional form:</span> The bow shock is formed at the
+              points (<math>
+                  <msub>
+                      <mi>x</mi>
+                      <mn>mp</mn>
+                  </msub>
+              </math>, <math>
+                  <msub>
+                      <mi>&rho;</mi>
+                      <mn>mp</mn>
+                  </msub>
+              </math>) where <br>
+              <math>
+                  <mi>
+                      <msub>
+                          <mi>x</mi>
+                          <mn>mp</mn>
+                      </msub>
+                  </mi>
+                  <mo>=</mo>
+                  <msub>
+                      <mi>x</mi>
+                      <mn>o</mn>
+                  </msub>
+                  <mo>+</mo>
+                  <mfrac>
+                      <mn>
+                          <msup>
+                              <mi>
+                                  <msub>
+                                      <mi>&lambda;</mi>
+                                      <mn>o</mn>
+                                  </msub>
+                              </mi>
+                              <mn>2</mn>
+                          </msup>
+                          <mo>-</mo>
+                          <msup>
+                              <mi>
+                                  <mi>&mu;</mi>
+                              </mi>
+                              <mn>2</mn>
+                          </msup>
+                      </mn>
+                      <mi>
+                          2
+                      </mi>
+                  </mfrac>
+              </math> <br>
+              <math>
+                  <mi>
+                      <msub>
+                          <mi>y</mi>
+                          <mn>mp</mn>
+                      </msub>
+                  </mi>
+                  <mo>=</mo>
+                  <msub>
+                      <mi>&lambda;</mi>
+                      <mn>o</mn>
+                  </msub>
+                  <mo> .</mo>
+
+                  <mi>&mu;</mi>
+                  <mo>.</mo>
+                  <mi>cos(&phi;)</mi>
+              </math><br>
+              <math>
+                  <mi>
+                      <msub>
+                          <mi>z</mi>
+                          <mn>mp</mn>
+                      </msub>
+                  </mi>
+                  <mo>=</mo>
+                  <msub>
+                      <mi>&lambda;</mi>
+                      <mn>o</mn>
+                  </msub>
+                  <mo> .</mo>
+
+                  <mi>&mu;</mi>
+                  <mo>.</mo>
+                  <mi>sin(&phi;)</mi>
+              </math><br>
+              <math>
+                  <mi>
+                      <msub>
+                          <mi>&rho;</mi>
+                          <mn>mp</mn>
+                      </msub>
+                  </mi>
+                  <mo>=</mo>
+                  <mn>
+                      <msqrt>
+                          <msup>
+                              <mi>
+                                  <msub>
+                                      <mi>y</mi>
+                                      <mn>mp</mn>
+                                  </msub>
+                              </mi>
+                              <mn>2</mn>
+                          </msup>
+                          <mo>+</mo>
+                          <msup>
+                              <mi>
+                                  <msub>
+                                      <mi>z</mi>
+                                      <mn>mp</mn>
+                                  </msub>
+                              </mi>
+                              <mn>2</mn>
+                          </msup>
+                      </msqrt>
+                  </mn>
+              </math> <br>
+              Here &lambda;, &mu; and &phi; are parabolic coordinates and x<sub>o</sub> is the focus. The surface of
+              the magnetopause is on the &lambda; = &lambda;<sub>o</sub> = constant value. The object is at (x,y,z) =
+              (0,0,0) and the x-axis points from the center of the object toward the Sun.
+              <br>
+              <span style="color: red; font-weight: bolder; ">Derivation of the free parameters: </span> The subsolar
+              point of the magnetopause, i.e. the value of x at the point where the magnetopause crosses the x-axis is
+              derived from the pressure balance equation by assuming that the dynamic pressure, P<sub>dyn</sub>, <br>
+              <math>
+                  <mi>
+                      <msub>
+                          <mi>P</mi>
+                          <mn>dyn</mn>
+                      </msub>
+                  </mi>
+                  <mo>=</mo>
+                  <mn>
+                      <mi>&kappa;</mi>
+                      <mo>.</mo>
+                      <mi>
+                          <msub>
+                              <mi>m</mi>
+                              <mn>p</mn>
+                          </msub>
+                      </mi>
+
+
+                      <mo>.</mo>
+                      <msup>
+                          <mi>
+                              <msub>
+                                  <mi>U</mi>
+                                  <mn>sw</mn>
+                              </msub>
+                          </mi>
+                          <mn>2</mn>
+                      </msup>
+                      <mo>.</mo>
+                      <mi>
+                          <msub>
+                              <mi>n</mi>
+                              <mn>sw</mn>
+                          </msub>
+                      </mi>
+                  </mn>
+              </math> , is balance by the magnetic pressure in the magnetosphere,
+              <math>
+                  <mi>
+                      <msub>
+                          <mi>p</mi>
+                          <mn>B</mn>
+                      </msub>
+                  </mi>
+                  <mo>=</mo>
+                  <mfrac>
+                      <msup>
+                          <mi>B</mi>
+                          <mn>2</mn>
+                      </msup>
+                      <mi>2. &mu;</mi>
+                  </mfrac>
+
+              </math> that is, <br>
+              <math>
+                  <mi>
+                      <msub>
+                          <mi>P</mi>
+                          <mn>dyn</mn>
+                      </msub>
+                  </mi>
+                  <mo>=</mo>
+                  <mi>
+                      <msub>
+                          <mi>p</mi>
+                          <mn>B</mn>
+                      </msub>
+                  </mi>
+              </math> <br>
+              Here kappa, <math>
+                  <mi>&kappa;</mi>
+              </math>, is a given dimensionless parameter which its value is close to one, m<sub>p</sub> is the mass
+              of a proton, U<sub>SW</sub> is the speed of the solar wind, and n<sub>SW</sub> is the density of the
+              solar wind.
+              <br>
+              MORE TEXT HERE
+</p>
+           </div>
+        <div class="col-sm-6">
+            <h3>Bowshock</h3>
+            <p class="card-text"><span style="color: red; font-weight: bolder; ">Shape:</span> A cone, <br>
+
+              <span style="color: red; font-weight: bolder;  ">Functional form:</span> The bow shock is formed at the
+              points (<math>
+                  <msub>
+                      <mi>x</mi>
+                      <mn>BS</mn>
+                  </msub>
+              </math>, <math>
+                  <msub>
+                      <mi>&rho;</mi>
+                      <mn>BS</mn>
+                  </msub>
+              </math>) where <br>
+
+              <math>
+                  <mi>
+                      <msub>
+                          <mi>r</mi>
+                          <mn>BS</mn>
+                      </msub>
+                  </mi>
+                  <mo>=</mo>
+                  <mfrac>
+                      <mn>
+                          <msub>
+                              <mi>L</mi>
+                              <mn>BS</mn>
+                          </msub>
+                      </mn>
+                      <mi>
+                          <mn>1</mn>
+                          <mo>+</mo>
+                          <msub>
+                              <mi>ecc</mi>
+                              <mn>BS</mn>
+                          </msub>
+                          <mo>.</mo>
+                          <mn>cos(&theta;)</mn>
+                      </mi>
+                  </mfrac>
+
+              </math> <br>
+              <math>
+                  <mi>
+                      <msub>
+                          <mi>x</mi>
+                          <mn>BS</mn>
+                      </msub>
+                  </mi>
+                  <mo>=</mo>
+                  <msub>
+                      <mi>r</mi>
+                      <mn>BS</mn>
+                  </msub>
+                  <mo> .</mo>
+
+                  <mi>cos(&theta;)</mi>
+                  <mo> +</mo>
+                  <msub>
+                      <mi>
+                          <msub>
+                              <mi>x</mi>
+                              <mn>o</mn>
+                          </msub>
+                      </mi>
+                      <mn>BS</mn>
+                  </msub>
+              </math><br>
+              <math>
+                  <mi>
+                      <msub>
+                          <mi>y</mi>
+                          <mn>BS</mn>
+                      </msub>
+                  </mi>
+                  <mo>=</mo>
+                  <msub>
+                      <mi>r</mi>
+                      <mn>BS</mn>
+                  </msub>
+                  <mo> .</mo>
+
+                  <mi>sin(&theta;)</mi>
+
+              </math><br>
+              <math>
+                  <mi>
+                      <msub>
+                          <mi>&rho;</mi>
+                          <mn>BS</mn>
+                      </msub>
+                  </mi>
+                  <mo>=</mo>
+                  <mn>
+                      <msqrt>
+                          <msup>
+                              <mi>
+                                  <msub>
+                                      <mi>y</mi>
+                                      <mn>BS</mn>
+                                  </msub>
+                              </mi>
+                              <mn>2</mn>
+                          </msup>
+                          <mo>+</mo>
+                          <msup>
+                              <mi>
+                                  <msub>
+                                      <mi>z</mi>
+                                      <mn>BS</mn>
+                                  </msub>
+                              </mi>
+                              <mn>2</mn>
+                          </msup>
+                      </msqrt>
+                  </mn>
+              </math> <br>
+              Here r<sub>B</sub> is the distance from the focus at x = x<sub>o</sub> on the x-axis which points from
+              the center of the object toward the Sun. <math><mi>&theta;</mi></math> is the angle between the x-axis and the direction of
+              the point on the bow shock. The ecc<sub>BS</sub> is the eccentricity and and L<sub>BS</sub> is the
+              semi-latus rectum.
+
+              <br>
+              <span style="color: red; font-weight: bolder; ">Derivation of the free parameters: </span> <br>
+              MORE TEXT HERE
+               
+
+</p>
+
+
+</div>
+      </div>
+
+  <p><mark style="margin-left: 20px;">Reference: Kallio, E., and H. Koskinen, A semiempirical magnetosheath model to
+            analyze the solar wind-magnetosphere interaction, <a
+                href="https://www.agu.org/pubs/crossref/2000/2000JA900086.shtml" target="_blank">J. Geophys. Res, 105,
+                27,469-27,479</a> , 2000 </mark></p>
+
+ 
+
+    <div class="footer1" id="contact">
+        <footer class="text-center text-white" style="background-color: #4981aa;">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                <!-- Section: CTA -->
+                <section class="">
+                    <p class="">
+                        <i class="fas fa-home me-3"></i><span style="margin-right: 20px;"> Maarintie 8,
+                            02150, Espoo, Finland</span>
+                        <i class="fas fa-envelope me-3"></i>
+                        <span style="margin-right: 20px;"> esa.kallio@aalto.fi</span>
+                        <i class="fas fa-phone me-3"></i> <span style="margin-right: 20px;">+358504205857</span>
+
+                        <!-- <span class="me-3">Register for free</span>
+              <button type="button" class="btn btn-outline-light btn-rounded">
+                Sign up!
+              </button> -->
+
+                </section>
+                <!-- Section: CTA -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright:
+                <a class="text-white" href="https://people.aalto.fi/esa.kallio" target="_blank">Esa Kallio</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+        </section>
+    </div>
+
+
+    <script src="index.js"></script>
+    <script src="index2.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="lodash.js"></script>
+</body>
+
+</html>

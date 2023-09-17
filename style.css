@@ -15,6 +15,12 @@
     text-align: justify;
     padding: 75px;
 }
+
+.home ul {
+    text-align: justify;
+    padding: 75px;
+}
+
 .home p a{
    color: #4981aa;  
    text-decoration: underline; 
@@ -113,3 +119,18 @@ margin-top: 100px;
 .card-text{
 line-height: 2rem;
 }
+
+.img-container {
+    position: relative;
+  }
+
+  .img-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 80px; /* Adjust this value to control the width of the fade effect */
+    background: linear-gradient(to right, transparent, white);
+    pointer-events: none; /* Allows clicks to pass through the overlay to the image */
+  }

@@ -1,53 +1,168 @@
 
 ///calculator///
-const convertBtn=document.getElementById("convertBtn")
+// const convertBtn=document.getElementById("convertBtn")
 
-let densityEl=document.getElementById("eDensity")
-let temperatureEl=document.getElementById("tElec")
-let bFieldEl=document.getElementById("bField")
-let vBulkEl=document.getElementById("vBulk")
+// let chargedParticle = document.getElementById("chargedParticle")
+// let densityEl=document.getElementById("eDensity")
+// let temperatureEl=document.getElementById("tElec")
+// let bFieldEl=document.getElementById("bField")
+// let vBulkEl=document.getElementById("vBulk")
 
-const magneticConstant=1.25663706e-6
-const electronMass= 9.10938215e-31
-const elementaryCharge=1.60217649e-19
-const boltzmannConstant=1.38065042e-23
-const vacuumPermit=8.85418782e-12
+// const magneticConstant=1.25663706e-6
+// const electronMass= 9.10938215e-31
+// const elementaryCharge=1.60217649e-19
+// const boltzmannConstant=1.38065042e-23
+// const vacuumPermit=8.85418782e-12
+// const protonMass =1.67262192e-27 //new feature
 
 
-///gets input values
-let alfven=document.getElementById("i1")
-let debye=document.getElementById("i2")
-let gyroRadius=document.getElementById("i3")
-let plasmaFreq=document.getElementById("i4")
-let angularFreq=document.getElementById("i5")
-let gyrotime=document.getElementById("i6")
-let thermalVelo=document.getElementById("i7")
+// ///gets input values
+// // let alfven=document.getElementById("i1")
+// // let debye=document.getElementById("i2")
+// // let gyroRadius=document.getElementById("i3")
+// // let plasmaFreq=document.getElementById("i4")
+// // let angularFreq=document.getElementById("i5")
+// // let gyrotime=document.getElementById("i6")
+// // let thermalVelo=document.getElementById("i7")
 
-///shows the calculations
-convertBtn.addEventListener("click", function(){
 
-     let density=densityEl.value
-     let temperature=temperatureEl.value
-     let bField=bFieldEl.value
-     let vBulk=vBulkEl.value
 
+// ///shows the calculations
+// convertBtn.addEventListener("click", function(){
+
+//      let chargedParticle=chargedParticle.value
+//      let density=densityEl.value
+//      let temperature=temperatureEl.value
+//      let bField=bFieldEl.value
+//      let vBulk=vBulkEl.value
+    
      
+// if (chargedParticle==="electron"){
+//  alfven.value=(bField/(Math.sqrt(magneticConstant*density*electronMass))).toExponential(4)
 
- alfven.value=(bField/(Math.sqrt(magneticConstant*density*electronMass))).toExponential(4)
+//  debye.value=(Math.sqrt((vacuumPermit*boltzmannConstant*temperature)/(density*(elementaryCharge**2)))).toExponential(4)
+//  gyroRadius.value=((electronMass*vBulk)/(elementaryCharge*bField)).toExponential(4)
+//  plasmaFreq.value=(Math.sqrt((density*(elementaryCharge**2))/(vacuumPermit*electronMass))).toExponential(4)
+//  angularFreq.value=((elementaryCharge*bField)/electronMass).toExponential(4)
+//  gyrotime.value=((2*Math.PI)/((elementaryCharge*bField)/electronMass)).toExponential(4)
+//  thermalVelo.value=(Math.sqrt((2*boltzmannConstant*temperature)/(electronMass))).toExponential(4)
 
- debye.value=(Math.sqrt((vacuumPermit*boltzmannConstant*temperature)/(density*(elementaryCharge**2)))).toExponential(4)
- gyroRadius.value=((electronMass*vBulk)/(elementaryCharge*bField)).toExponential(4)
- plasmaFreq.value=(Math.sqrt((density*(elementaryCharge**2))/(vacuumPermit*electronMass))).toExponential(4)
- angularFreq.value=((elementaryCharge*bField)/electronMass).toExponential(4)
- gyrotime.value=((2*Math.PI)/((elementaryCharge*bField)/electronMass)).toExponential(4)
- thermalVelo.value=(Math.sqrt((2*boltzmannConstant*temperature)/(electronMass))).toExponential(4)
+//  let alfven=document.getElementById("i1")
+// let debye=document.getElementById("i2")
+// let gyroRadius=document.getElementById("i3")
+// let plasmaFreq=document.getElementById("i4")
+// let angularFreq=document.getElementById("i5")
+// let gyrotime=document.getElementById("i6")
+// let thermalVelo=document.getElementById("i7")
+   
+// }
+// else if (chargedParticle==="proton") {
+//     alfven.value=(bField/(Math.sqrt(magneticConstant*density*protonMass))).toExponential(4)
 
- })
+//     debye.value=(Math.sqrt((vacuumPermit*boltzmannConstant*temperature)/(density*(elementaryCharge**2)))).toExponential(4)
+//     gyroRadius.value=((protonMass*vBulk)/(elementaryCharge*bField)).toExponential(4)
+//     plasmaFreq.value=(Math.sqrt((density*(elementaryCharge**2))/(vacuumPermit*protonMass))).toExponential(4)
+//     angularFreq.value=((elementaryCharge*bField)/protonMass).toExponential(4)
+//     gyrotime.value=((2*Math.PI)/((elementaryCharge*bField)/protonMass)).toExponential(4)
+//     thermalVelo.value=(Math.sqrt((2*boltzmannConstant*temperature)/(protonMass))).toExponential(4)
+
+//     let alfven=document.getElementById("i1")
+// let debye=document.getElementById("i2")
+// let gyroRadius=document.getElementById("i3")
+// let plasmaFreq=document.getElementById("i4")
+// let angularFreq=document.getElementById("i5")
+// let gyrotime=document.getElementById("i6")
+// let thermalVelo=document.getElementById("i7")
+// }
+
+//  })
+
+const convertBtn = document.getElementById("convertBtn");
+const chargedParticleEl = document.getElementById("chargedParticle");
+const densityEl = document.getElementById("eDensity");
+const temperatureEl = document.getElementById("tElec");
+const bFieldEl = document.getElementById("bField");
+const vBulkEl = document.getElementById("vBulk");
+
+const magneticConstant = 1.25663706e-6;
+const electronMass = 9.10938215e-31;
+const elementaryCharge = 1.60217649e-19;
+const boltzmannConstant = 1.38065042e-23;
+const vacuumPermit = 8.85418782e-12;
+const protonMass = 1.67262192e-27;
+
+convertBtn.addEventListener("click", function () {
+  let chargedParticle = chargedParticleEl.value;
+  let density = parseFloat(densityEl.value);
+  let temperature = parseFloat(temperatureEl.value);
+  let bField = parseFloat(bFieldEl.value);
+  let vBulk = parseFloat(vBulkEl.value);
+
+  if (chargedParticle === "electron") {
+    let alfven = bField / (Math.sqrt(magneticConstant * density * electronMass));
+    let debye = Math.sqrt((vacuumPermit * boltzmannConstant * temperature) / (density * (elementaryCharge ** 2)));
+    let gyroRadius = (electronMass * vBulk) / (elementaryCharge * bField);
+    let plasmaFreq = Math.sqrt((density * (elementaryCharge ** 2)) / (vacuumPermit * electronMass));
+    let angularFreq = (elementaryCharge * bField) / electronMass;
+    let gyrotime = (2 * Math.PI) / ((elementaryCharge * bField) / electronMass);
+    let thermalVelo = Math.sqrt((2 * boltzmannConstant * temperature) / electronMass);
+    let sonicMach=vBulk/thermalVelo;
+    let alfvenMach=vBulk/alfven;
+
+    // Update the output fields with the calculated values
+    document.getElementById("i1").value = alfven.toExponential(4);
+    document.getElementById("i2").value = debye.toExponential(4);
+    document.getElementById("i3").value = gyroRadius.toExponential(4);
+    document.getElementById("i4").value = plasmaFreq.toExponential(4);
+    document.getElementById("i5").value = angularFreq.toExponential(4);
+    document.getElementById("i6").value = gyrotime.toExponential(4);
+    document.getElementById("i7").value = thermalVelo.toExponential(4);
+    document.getElementById("i8").value=sonicMach.toExponential(4);
+    document.getElementById("i9").value=alfvenMach.toExponential(4);
+
+  } else if (chargedParticle === "proton") {
+    let alfven = bField / (Math.sqrt(magneticConstant * density * protonMass));
+    let debye = Math.sqrt((vacuumPermit * boltzmannConstant * temperature) / (density * (elementaryCharge ** 2)));
+    let gyroRadius = (protonMass * vBulk) / (elementaryCharge * bField);
+    let plasmaFreq = Math.sqrt((density * (elementaryCharge ** 2)) / (vacuumPermit * protonMass));
+    let angularFreq = (elementaryCharge * bField) / protonMass;
+    let gyrotime = (2 * Math.PI) / ((elementaryCharge * bField) / protonMass);
+    let thermalVelo = Math.sqrt((2 * boltzmannConstant * temperature) / protonMass);
+    let sonicMach=vBulk/thermalVelo;
+    let alfvenMach=vBulk/alfven;
+
+    // Update the output fields with the calculated values
+    document.getElementById("i1").value = alfven.toExponential(4);
+    document.getElementById("i2").value = debye.toExponential(4);
+    document.getElementById("i3").value = gyroRadius.toExponential(4);
+    document.getElementById("i4").value = plasmaFreq.toExponential(4);
+    document.getElementById("i5").value = angularFreq.toExponential(4);
+    document.getElementById("i6").value = gyrotime.toExponential(4);
+    document.getElementById("i7").value = thermalVelo.toExponential(4);
+    document.getElementById("i8").value=sonicMach.toExponential(4);
+    document.getElementById("i9").value=alfvenMach.toExponential(4);
+  } else {
+    // If charged particle is not selected, set all results to 0
+    document.getElementById("i1").value = "0";
+    document.getElementById("i2").value = "0";
+    document.getElementById("i3").value = "0";
+    document.getElementById("i4").value = "0";
+    document.getElementById("i5").value = "0";
+    document.getElementById("i6").value = "0";
+    document.getElementById("i7").value = "0";
+    document.getElementById("i8").value="0";
+    document.getElementById("i9").value="0";
+  }
+});
 
  //end of calculation
 
 
  // this function hides all the planet input divs but only shows selected one.
+
+
+
+
 
  
  function enableBrand(selectedOption){

@@ -34,10 +34,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#intro">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#calculator">Calculator</a>
+                        <a class="nav-link" href="#home">Calculator</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#magnetosphere-earth">Bow Shock and the Magnetopause</a>
@@ -52,12 +52,50 @@
             </div>
         </div>
     </nav>
-    <div id="home" class="home">
-        <h1>Plasma Parameters Calculator</h1>
-        <p style="line-height: 2.3;">Plasma is a unique state of matter in which the charged particles of decomposed atoms come together to form a collective assemblage. Although none of the particles are actually free, they are strongly influenced by the electromagnetic fields of each neighboring particle. This results in the system of charged particles responding collectively to electromagnetic forces.
+   <!-- <img src="intro.png" alt="Image Description" style="max-width: 50%; display: block; margin: 50px auto;" /> 
+    <img src="intro.png" class="img-fluid" width="100%" alt="Flow"> --> 
+    
+    <div class="card border-0" style="width: 100%; padding: 70px;" id="intro">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <div class="img-container">
+                <img src="intro.png" class="img-fluid rounded-start" alt="Flow">
+              </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h1 class="card-title" style="color: #4981aa" >Welcome to our website</h1>
+              
+              <p class="card-text" style="text-align: justify;">A portal dedicated to the exploration of fundamental plasma parameters and plasma regions. Our platform offers a unique and interactive experience, allowing you to delve into the intriguing world of plasma physics with ease.
 
-            If you are interested in calculating certain properties of plasma, this calculator can help you determine several important plasma parameters. These include:
-            
+                At the core of our website is a powerful calculator that enables you to compute essential plasma properties such as the Alfven Velocity, Debye Length, Gyroradius, Electron Plasma Frequency (maintaining Quasi-neutrality), Angular Frequency, and Gyrotime. These calculations provide valuable insights into the behavior of plasma in various contexts.
+                
+                But that's not all. Our website goes beyond calculations. We also offer a visual journey through our interactive plots, providing you with a comprehensive understanding of phenomena like the bow shock and magnetopause around each celestial body within our solar system.
+                
+                Delve deeper into the intricacies of plasma science as we guide you through the key plasma regions: "the bow shock," "the magnetosheath," "the magnetopause," "the magnetic barrier," "the magnetosphere," "the magnetotail," and "the wake cavity." Explore the boundaries and interactions that define these regions, expanding your knowledge of plasma dynamics in space.
+                
+                Additionally, we provide access to a Paraview section, allowing you to analyze files based on the MULTI hybrid model simulation. Here, you can explore various solar wind interactions with Solar System objects, gaining valuable insights into complex plasma phenomena.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    
+    
+    
+    <div id="home" class="home">
+        <!-- <p style="line-height: 2.3;">This site gives a possibility to derive interactively some
+            fundamental plasma parameters and plasma regions. <br> more text here..</p> -->
+        <h1>Plasma Parameters Calculator</h1>
+        <p style="line-height: 2.3;">Plasma is a unique state of matter in which the charged particles of decomposed
+            atoms come together to form a collective assemblage. Although none of the particles are actually free, they
+            are strongly influenced by the electromagnetic fields of each neighboring particle. This results in the
+            system of charged particles responding collectively to electromagnetic forces.
+
+            If you are interested in calculating certain properties of plasma, this calculator can help you determine
+            several important plasma parameters. These include:
+
             Alfven Velocity: the velocity at which magnetic disturbances propagate through plasma.
             Debye Length: the scale length over which the plasma is shielded by its electric charges.
             Gyroradius: the radius of the circular motion that charged particles make in a magnetic field.
@@ -65,7 +103,8 @@
             Angular Frequency: the rate at which a particle rotates in a circular path.
             Gyrotime: the time it takes for a particle to complete one full circular motion in a magnetic field.
             Electron Thermal Velocity: the average velocity of electrons in the plasma due to thermal motion.
-            If you want to learn more about how these plasma parameters are calculated, please click <a href="formulas.html" target="_blank">info </a> link to see the equations.</p>
+            If you want to learn more about how these plasma parameters are calculated, please click <a
+                href="formulas.html" target="_blank">info </a> link to see the equations.</p>
     </div>
     <div id="calculator">
         <div class="row">
@@ -77,6 +116,28 @@
                     <p>Boltzman constant: k = 1.38065042e-23 J/K</p>
                     <p>Vacuum Permittivity: ε = 8.85418782e-12 F/m</p>
                     <p class="last">Magnetic constant: μ = 1.25663706e-6 mT/A</p>
+                    <!-- <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Choose the charged particle:</label>
+                        
+                            <select class="form-select" id="chargedParticle">
+                                <option selected value="electron">Electron</option>       
+                                <option value="proton">Proton/Neutron</option>
+                            </select>
+                        
+                    </div> -->
+
+
+                    <select class="form-select" aria-label="Default select example" id="chargedParticle"
+                        style="background-color: #4981aa; width: 250px; margin-bottom: 50px; padding: 10px; color: white; font-weight: 600;">
+                        <option selected>Select charged particle</option>
+                        <option value="electron">Electron</option>
+                        <option value="proton">Proton/Neutron</option>
+
+                    </select>
+
+
+
+
                     <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Number Density [m<sup>-3</sup>]</label>
                         <div class="col-sm-6">
@@ -108,47 +169,61 @@
                 <div id="results" class="results">
                     <h2>Results</h2>
                     <div class="row mb-3">
-                        <label for="colFormLabel" class="col-sm-2 col-form-label">Alfven Velocity</label>
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Alfven Velocity <strong> (V<sub>A</sub>) m/s</strong></label>
                         <div class="col-sm-6">
                             <input type="" class="form-control" id="i1" placeholder="m/s">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="colFormLabel" class="col-sm-2 col-form-label">Debye Lenght</label>
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Debye Lenght <strong>(λ<sub>D</sub>) m </strong></label>
                         <div class="col-sm-6">
                             <input type="" class="form-control" id="i2" placeholder="m">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="colFormLabel" class="col-sm-2 col-form-label">Gyroradius</label>
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Gyroradius <strong>(ρ) m </strong></label>
                         <div class="col-sm-6">
                             <input type="" class="form-control" id="i3" placeholder="m">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="colFormLabel" class="col-sm-2 col-form-label">Electron Plasma Frequency
-                            (Quasi-neutrality)</label>
+                            (Quasi-neutrality) <strong>(ω<sub>pe</sub>) rad/s</strong></label>
                         <div class="col-sm-6">
                             <input type="" class="form-control" id="i4" placeholder="rad/s">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="colFormLabel" class="col-sm-2 col-form-label">Angular Frequency</label>
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Angular Frequency <strong>(ω) rad/s</strong></label>
                         <div class="col-sm-6">
                             <input type="" class="form-control" id="i5" placeholder="Hz">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="colFormLabel" class="col-sm-2 col-form-label">Gyrotime</label>
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Gyrotime <strong>(τ) s</strong></label>
                         <div class="col-sm-6">
                             <input type="" class="form-control" id="i6" placeholder="s">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="colFormLabel" class="col-sm-2 col-form-label">Electron Thermal Velocity
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Thermal Velocity <strong>(V<sub>te</sub>) m/s</strong>
                         </label>
                         <div class="col-sm-6">
                             <input type="" class="form-control" id="i7" placeholder="m/s">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Sonic Mach Number <strong>(M<sub>s</sub>) </strong>
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="" class="form-control" id="i8" >
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Alfven Mach Number <strong>(M<sub>A</sub>)</strong>
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="" class="form-control" id="i9" >
                         </div>
                     </div>
                 </div>
@@ -160,9 +235,8 @@
         <div class="row">
             <div class="col-6 parameters">
                 <h2 class="earth">Bow Shock and the Magnetopause</h2>
-                <select class="form-select" aria-label="Default select example" 
-                onchange="enableBrand(this)"
-                style="background-color: #4981aa; width: 200px; margin-bottom: 50px; padding: 10px; color: white; font-weight: 600;">
+                <select class="form-select" aria-label="Default select example" onchange="enableBrand(this)"
+                    style="background-color: #4981aa; width: 200px; margin-bottom: 50px; padding: 10px; color: white; font-weight: 600;">
                     <option selected>Planets</option>
                     <option value="1">Earth</option>
                     <option value="2">Mars</option>
@@ -170,10 +244,10 @@
                     <option value="4">Saturn</option>
                     <option value="5">Uranus</option>
                     <option value="6">Neptune</option>
-                  </select>
-                
+                </select>
+
                 <!--EARTH HTML PART-->
-                <div id="earthDiv" class="noneEarth" >
+                <div id="earthDiv" class="noneEarth">
                     <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
                         <div class="col-sm-6">
@@ -218,11 +292,12 @@
                         </div>
                     </div>
                     <button id="plotBtn" type="button" class="btn btn-info">Plot</button>
-                    <button type="button" class="btn btn-info"> <a href="descriptionsEarth.html" target="_blank"> Info </a></button>
+                    <button type="button" class="btn btn-info"> <a href="descriptionsEarth.html" target="_blank"> Info
+                        </a></button>
                 </div>
 
                 <!--MARS HTML PART-->
-                <div id="marsDiv" class="noneMars" >
+                <div id="marsDiv" class="noneMars">
                     <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
                         <div class="col-sm-6">
@@ -271,7 +346,7 @@
                 </div>
 
                 <!--JUPITER HTML PART-->
-                <div id="jupiterDiv" class="noneJupiter" >
+                <div id="jupiterDiv" class="noneJupiter">
                     <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
                         <div class="col-sm-6">
@@ -317,11 +392,11 @@
                     </div>
                     <button id="plotBtnJupiter" type="button" class="btn btn-info">Plot</button>
                     <button type="button" class="btn btn-info">Info</button>
-                 
+
                 </div>
 
                 <!--SATURN DIV-->
-                <div id="saturnDiv" class="noneSaturn" >
+                <div id="saturnDiv" class="noneSaturn">
                     <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
                         <div class="col-sm-6">
@@ -370,7 +445,7 @@
                 </div>
 
                 <!--URANUS DIV-->
-                <div id="uranusDiv" class="noneUranus" >
+                <div id="uranusDiv" class="noneUranus">
                     <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
                         <div class="col-sm-6">
@@ -418,8 +493,8 @@
                     <button type="button" class="btn btn-info">Info</button>
                 </div>
 
-                   <!--NEPTUNE DIV-->
-                   <div id="neptuneDiv" class="noneNeptune" >
+                <!--NEPTUNE DIV-->
+                <div id="neptuneDiv" class="noneNeptune">
                     <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Solar wind speed [km/s]</label>
                         <div class="col-sm-6">
@@ -466,11 +541,11 @@
                     <button id="plotBtnNeptune" type="button" class="btn btn-info">Plot</button>
                     <button type="button" class="btn btn-info">Info</button>
                 </div>
-               
+
             </div>
 
             <!--PLOT DIVISION -->
-           <div id="plot" class="col-6"></div> 
+            <div id="plot" class="col-6"></div>
         </div>
     </div>
 

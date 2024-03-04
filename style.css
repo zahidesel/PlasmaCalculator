@@ -105,7 +105,7 @@ margin-top: 100px;
     color: black!important;
 }
 
-.noneEarth, .noneMars, .noneJupiter , .noneSaturn, .noneUranus, .noneNeptune {
+.noneMercury , .noneVenus, .noneEarth, .noneMars, .noneJupiter , .noneSaturn, .noneUranus, .noneNeptune {
     display: none;
 }
 

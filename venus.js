@@ -1,25 +1,22 @@
-const plotButtonMars=document.getElementById("plotBtnMars")
+const plotButtonVenus = document.getElementById("plotBtnVenus");
 
-////////// INPUTS FROM USER ///////////////
-let u_swEl1= document.getElementById("Input1M")
-let n_swEl1=document.getElementById("Input2M")
-let roEl1=document.getElementById("Input3M")
-let kappaEl1=document.getElementById("Input4M")
-let eccEl1=document.getElementById("Input5M")
-let bsEl1=document.getElementById("Input6M")
+// INPUTS FROM USER
+let u_swEl_Ven = document.getElementById("Input1Ven");
+let n_swEl_Ven = document.getElementById("Input2Ven");
+let roEl_Ven = document.getElementById("Input3Ven");
+let kappaEl_Ven = document.getElementById("Input4Ven");
+let eccEl_Ven = document.getElementById("Input5Ven");
+let bsEl_Ven = document.getElementById("Input6Ven");
 
-
-
-////Clicking the Plot button makes the Plot visible///////////////
-
-plotButtonMars.addEventListener("click", function(){
+// Clicking the Plot button makes the Plot visible
+plotButtonVenus.addEventListener("click", function () {
   
-  let u_sw=parseFloat(u_swEl1.value)
-  let n_sw=parseFloat(n_swEl1.value)
-  let ro=parseFloat(roEl1.value)
-  let kappa=parseFloat(kappaEl1.value)
-  let ecc=parseFloat(eccEl1.value)
-  let bs=parseFloat(bsEl1.value)
+  let u_sw=parseFloat(u_swEl_Ven.value)
+  let n_sw=parseFloat(n_swEl_Ven.value)
+  let ro=parseFloat(roEl_Ven.value)
+  let kappa=parseFloat(kappaEl_Ven.value)
+  let ecc=parseFloat(eccEl_Ven.value)
+  let bs=parseFloat(bsEl_Ven.value)
   
 
 console.log(u_sw)
@@ -33,16 +30,8 @@ p_dyn=(1.67e-27)*((u_sw*1e3)**2)*(n_sw*1e6)
 muu=4*Math.PI*1E-7
 bz=Math.sqrt(2*muu*p_dyn*kappa)
 
-bz_sbt=4.0345e-08  //Bz_needed_in_pressure_balance for mars
+bz_sbt=8.5173e-08  //Bz_needed_in_pressure_balance for venus
   
-// x_nose_MP_Rp_Nominal(1) = 1.4;    % Space Physics, An Introduction, Russell,Luhmaan,Strangeway, 2016, Table 12.1.
-// x_nose_MP_Rp_Nominal(2) = 1.1;    % For test purposeses, should be fine-tuned later
-// x_nose_MP_Rp_Nominal(3) = 10;     % Space Physics, An Introduction, Russell,Luhmaan,Strangeway, 2016, Table 12.1.
-// x_nose_MP_Rp_Nominal(4) = 1.1;    % For test purposeses, should be fine-tuned later
-// x_nose_MP_Rp_Nominal(5) = 41;     % Space Physics, An Introduction, Russell,Luhmaan,Strangeway, 2016, Table 12.1.
-// x_nose_MP_Rp_Nominal(6) = 19;     % Space Physics, An Introduction, Russell,Luhmaan,Strangeway, 2016, Table 12.1.
-// x_nose_MP_Rp_Nominal(7) = 24;     % Space Physics, An Introduction, Russell,Luhmaan,Strangeway, 2016, Table 12.1.
-// x_nose_MP_Rp_Nominal(8) = 23;    
 x_nose_MP_sbt=1.1 //venus
   B_surf_mag_equator=0.5*bz_sbt*(x_nose_MP_sbt**3); 
  console.log("B_surf_mag_equator: ", B_surf_mag_equator)
@@ -56,7 +45,7 @@ ro_term=ro*x_nose
 lamda=ro_term/(Math.sqrt(2*x_nose))
 x_o_mp=x_nose-(lamda**2)/2
 
-x_o_bs=0.55 //mars 
+x_o_bs=0.788 //for venus for mars 0.44
 x_nose_bs=bs*x_nose
 l_bs=(x_nose_bs-x_o_bs)*(1+ecc)
 
@@ -148,22 +137,22 @@ let data = [{
     x:EarthSin,
     y:EarthCos,
     fill:'toself',
-    color:'#BA6E15',
-    fillcolor:'#BA6E15',
-    name:'Mars'
+    color:'#C09932',
+    fillcolor:'#C09932',
+    name:'Venus'
    }
 
 ]
 let layout = {
-    title: 'MARS',
+    title: 'VENUS',
     height: 800,
     width: 800,
     font: {size: 13},
     plot_bgcolor: '',
     paper_bgcolor: '#ace', 
     barmode: 'relative',
-    yaxis: {title: 'Y [R<sub>Mars</sub>]', range: [-4, 4], dtick: 5},
-    xaxis: {title: 'X [R<sub>Mars</sub>]', range: [-4, 4]}};
+    yaxis: {title: 'Y [R<sub>Venus</sub>]', range: [-3, 3], dtick: 5},
+    xaxis: {title: 'X [R<sub>Venus</sub>]', range: [-3, 3]}};
 let config = {responsive: true};
 
 
@@ -172,12 +161,8 @@ let config = {responsive: true};
 Plotly.newPlot('plot', data, layout, config);
 
  
- })
-
-////end of plot function///////////////////
-
-
-
+ });
+ 
 //// Function for the magnetosphere Max-Min input values ////////////////
 function minMax(that, value){
   let min = parseFloat(that.getAttribute("min"))
@@ -192,4 +177,3 @@ function minMax(that, value){
     return val;
   }
 }
-

@@ -166,48 +166,81 @@ convertBtn.addEventListener("click", function () {
 
  
  function enableBrand(selectedOption){
-    if(selectedOption.value==1){
+  if(selectedOption.value==1){
+    document.getElementById("mercuryDiv").classList.remove('noneMercury')
+    document.getElementById("venusDiv").classList.add('noneVenus')
+    document.getElementById("earthDiv").classList.add('noneEarth')
+    document.getElementById("marsDiv").classList.add('noneMars')
+    document.getElementById("jupiterDiv").classList.add('noneJupiter')
+    document.getElementById("saturnDiv").classList.add('noneSaturn')
+    document.getElementById("uranusDiv").classList.add('noneUranus')
+    document.getElementById("neptuneDiv").classList.add('noneNeptune')        
+}
+
+else if(selectedOption.value==2){
+  document.getElementById("venusDiv").classList.remove('noneVenus')
+  document.getElementById("mercuryDiv").classList.add('noneMercury')
+  document.getElementById("earthDiv").classList.add('noneEarth')
+  document.getElementById("marsDiv").classList.add('noneMars')
+  document.getElementById("jupiterDiv").classList.add('noneJupiter')
+  document.getElementById("saturnDiv").classList.add('noneSaturn')
+  document.getElementById("uranusDiv").classList.add('noneUranus')
+  document.getElementById("neptuneDiv").classList.add('noneNeptune')        
+}
+   else if(selectedOption.value==3){
         document.getElementById("earthDiv").classList.remove('noneEarth')
+        document.getElementById("mercuryDiv").classList.add('noneMercury')
+        document.getElementById("venusDiv").classList.add('noneVenus')
         document.getElementById("marsDiv").classList.add('noneMars')
         document.getElementById("jupiterDiv").classList.add('noneJupiter')
         document.getElementById("saturnDiv").classList.add('noneSaturn')
         document.getElementById("uranusDiv").classList.add('noneUranus')
         document.getElementById("neptuneDiv").classList.add('noneNeptune')        
     }
-    else if(selectedOption.value==2){
+    else if(selectedOption.value==4){
         document.getElementById("marsDiv").classList.remove('noneMars')
+        document.getElementById("mercuryDiv").classList.add('noneMercury')
+        document.getElementById("venusDiv").classList.add('noneVenus')
         document.getElementById("earthDiv").classList.add('noneEarth')
         document.getElementById("jupiterDiv").classList.add('noneJupiter')
         document.getElementById("saturnDiv").classList.add('noneSaturn')
         document.getElementById("uranusDiv").classList.add('noneUranus')
         document.getElementById("neptuneDiv").classList.add('noneNeptune')
     }
-    else if(selectedOption.value==3){
+    else if(selectedOption.value==5){
         document.getElementById("jupiterDiv").classList.remove('noneJupiter')
+        document.getElementById("mercuryDiv").classList.add('noneMercury')
+        document.getElementById("venusDiv").classList.add('noneVenus')
         document.getElementById("earthDiv").classList.add('noneEarth')
         document.getElementById("marsDiv").classList.add('noneMars')
         document.getElementById("saturnDiv").classList.add('noneSaturn')
         document.getElementById("uranusDiv").classList.add('noneUranus')
         document.getElementById("neptuneDiv").classList.add('noneNeptune')
     }
-    else if(selectedOption.value==4){
+    else if(selectedOption.value==6){
       document.getElementById("saturnDiv").classList.remove('noneSaturn')
+      document.getElementById("mercuryDiv").classList.add('noneMercury')
+      document.getElementById("venusDiv").classList.add('noneVenus')
       document.getElementById("earthDiv").classList.add('noneEarth')
       document.getElementById("marsDiv").classList.add('noneMars')
       document.getElementById("jupiterDiv").classList.add('noneJupiter')
       document.getElementById("uranusDiv").classList.add('noneUranus')
       document.getElementById("neptuneDiv").classList.add('noneNeptune')
     }
-    else if(selectedOption.value==5){
+    else if(selectedOption.value==7){
         document.getElementById("uranusDiv").classList.remove('noneUranus')
+        document.getElementById("mercuryDiv").classList.add('noneMercury')
+        document.getElementById("venusDiv").classList.add('noneVenus')
         document.getElementById("earthDiv").classList.add('noneEarth')
         document.getElementById("marsDiv").classList.add('noneMars')
         document.getElementById("jupiterDiv").classList.add('noneJupiter')
         document.getElementById("saturnDiv").classList.add('noneSaturn')
         document.getElementById("neptuneDiv").classList.add('noneNeptune')
       }
-    else {
+    else if(selectedOption.value==8){
         document.getElementById("neptuneDiv").classList.remove('noneNeptune')
+        document.getElementById("mercuryDiv").classList.add('noneMercury')
+        document.getElementById("venusDiv").classList.add('noneVenus')
         document.getElementById("earthDiv").classList.add('noneEarth')
         document.getElementById("marsDiv").classList.add('noneMars')
         document.getElementById("jupiterDiv").classList.add('noneJupiter')

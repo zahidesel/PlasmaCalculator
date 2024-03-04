@@ -1,25 +1,26 @@
-const plotButtonMars=document.getElementById("plotBtnMars")
+const plotButtonMercury=document.getElementById("plotBtnMercury")
 
 ////////// INPUTS FROM USER ///////////////
-let u_swEl1= document.getElementById("Input1M")
-let n_swEl1=document.getElementById("Input2M")
-let roEl1=document.getElementById("Input3M")
-let kappaEl1=document.getElementById("Input4M")
-let eccEl1=document.getElementById("Input5M")
-let bsEl1=document.getElementById("Input6M")
+
+let u_swEl_Mer = document.getElementById("Input1Mer");
+ let n_swEl_Mer = document.getElementById("Input2Mer");
+ let roEl_Mer = document.getElementById("Input3Mer");
+ let kappaEl_Mer = document.getElementById("Input4Mer");
+ let eccEl_Mer = document.getElementById("Input5Mer");
+ let bsEl_Mer = document.getElementById("Input6Mer");
 
 
 
 ////Clicking the Plot button makes the Plot visible///////////////
 
-plotButtonMars.addEventListener("click", function(){
-  
-  let u_sw=parseFloat(u_swEl1.value)
-  let n_sw=parseFloat(n_swEl1.value)
-  let ro=parseFloat(roEl1.value)
-  let kappa=parseFloat(kappaEl1.value)
-  let ecc=parseFloat(eccEl1.value)
-  let bs=parseFloat(bsEl1.value)
+plotButtonMercury.addEventListener("click", function(){
+
+  let u_sw=parseFloat(u_swEl_Mer.value)
+  let n_sw=parseFloat(n_swEl_Mer.value)
+  let ro=parseFloat(roEl_Mer.value)
+  let kappa=parseFloat(kappaEl_Mer.value)
+  let ecc=parseFloat(eccEl_Mer.value)
+  let bs=parseFloat(bsEl_Mer.value)
   
 
 console.log(u_sw)
@@ -33,17 +34,9 @@ p_dyn=(1.67e-27)*((u_sw*1e3)**2)*(n_sw*1e6)
 muu=4*Math.PI*1E-7
 bz=Math.sqrt(2*muu*p_dyn*kappa)
 
-bz_sbt=4.0345e-08  //Bz_needed_in_pressure_balance for mars
+bz_sbt=1.5724e-07  //Bz_needed_in_pressure_balance constant for each
   
-// x_nose_MP_Rp_Nominal(1) = 1.4;    % Space Physics, An Introduction, Russell,Luhmaan,Strangeway, 2016, Table 12.1.
-// x_nose_MP_Rp_Nominal(2) = 1.1;    % For test purposeses, should be fine-tuned later
-// x_nose_MP_Rp_Nominal(3) = 10;     % Space Physics, An Introduction, Russell,Luhmaan,Strangeway, 2016, Table 12.1.
-// x_nose_MP_Rp_Nominal(4) = 1.1;    % For test purposeses, should be fine-tuned later
-// x_nose_MP_Rp_Nominal(5) = 41;     % Space Physics, An Introduction, Russell,Luhmaan,Strangeway, 2016, Table 12.1.
-// x_nose_MP_Rp_Nominal(6) = 19;     % Space Physics, An Introduction, Russell,Luhmaan,Strangeway, 2016, Table 12.1.
-// x_nose_MP_Rp_Nominal(7) = 24;     % Space Physics, An Introduction, Russell,Luhmaan,Strangeway, 2016, Table 12.1.
-// x_nose_MP_Rp_Nominal(8) = 23;    
-x_nose_MP_sbt=1.1 //venus
+x_nose_MP_sbt=1.4 //mercury
   B_surf_mag_equator=0.5*bz_sbt*(x_nose_MP_sbt**3); 
  console.log("B_surf_mag_equator: ", B_surf_mag_equator)
  
@@ -56,7 +49,7 @@ ro_term=ro*x_nose
 lamda=ro_term/(Math.sqrt(2*x_nose))
 x_o_mp=x_nose-(lamda**2)/2
 
-x_o_bs=0.55 //mars 
+x_o_bs=bs*x_o_mp //for venus or mars it is (x_o_bs=bs)
 x_nose_bs=bs*x_nose
 l_bs=(x_nose_bs-x_o_bs)*(1+ecc)
 
@@ -125,45 +118,45 @@ let data = [{
       }
    },
    {
-    // x: _.map(x_MP, function(x){return -1*x}),
-    // y: y_MP,
-    // type: 'scatter',
-    // name:'Magnetopause',
-    // line: {
-    //     color: 'red',
-    //     width: 2,
+    x: _.map(x_MP, function(x){return -1*x}),
+    y: y_MP,
+    type: 'scatter',
+    name:'Magnetopause',
+    line: {
+        color: 'red',
+        width: 2,
         
-    //   }},{
-    // x: _.map(x_MP, function(x){return -1*x}),
-    // y:_.map(y_MP, function(x){return -1*x}),
-    // type: 'scatter',
-    // name:'Magnetopause',
-    // showlegend:false,
-    // line: {
-    //     color: 'red',
-    //     width: 2,
-    //   }
+      }},{
+    x: _.map(x_MP, function(x){return -1*x}),
+    y:_.map(y_MP, function(x){return -1*x}),
+    type: 'scatter',
+    name:'Magnetopause',
+    showlegend:false,
+    line: {
+        color: 'red',
+        width: 2,
+      }
    },
    {
     x:EarthSin,
     y:EarthCos,
     fill:'toself',
-    color:'#BA6E15',
-    fillcolor:'#BA6E15',
-    name:'Mars'
+    color:'#ABACAB',
+    fillcolor:'#ABACAB',
+    name:'Mercury'
    }
 
 ]
 let layout = {
-    title: 'MARS',
+    title: 'MERCURY',
     height: 800,
     width: 800,
     font: {size: 13},
     plot_bgcolor: '',
     paper_bgcolor: '#ace', 
     barmode: 'relative',
-    yaxis: {title: 'Y [R<sub>Mars</sub>]', range: [-4, 4], dtick: 5},
-    xaxis: {title: 'X [R<sub>Mars</sub>]', range: [-4, 4]}};
+    yaxis: {title: 'Y [R<sub>Mercury</sub>]', range: [-4, 4], dtick: 5},
+    xaxis: {title: 'X [R<sub>Mercury</sub>]', range: [-4, 4]}};
 let config = {responsive: true};
 
 
@@ -171,8 +164,7 @@ let config = {responsive: true};
 
 Plotly.newPlot('plot', data, layout, config);
 
- 
- })
+})
 
 ////end of plot function///////////////////
 
@@ -192,4 +184,5 @@ function minMax(that, value){
     return val;
   }
 }
+
 

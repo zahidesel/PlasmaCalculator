@@ -29,21 +29,31 @@ console.log(kappa)
 console.log(ecc)
 console.log(bs)
 
-p_dyn=kappa*(1.67e-27)*((u_sw*1e3)**2)*(n_sw*1e6)
-bz=Math.sqrt(2*4*Math.PI*1E-7*p_dyn)
+p_dyn=(1.67e-27)*((u_sw*1e3)**2)*(n_sw*1e6)
+muu=4*Math.PI*1E-7
+bz=Math.sqrt(2*muu*p_dyn*kappa)
 
-x_nose=(2*31000e-9/bz)**(1/3)
+bz_sbt=3.194e-09  //Bz_needed_in_pressure_balance constant for each
+  
+x_nose_MP_sbt=24 //URANUS
+  B_surf_mag_equator=0.5*bz_sbt*(x_nose_MP_sbt**3); 
+ console.log("B_surf_mag_equator: ", B_surf_mag_equator)
+ 
+
+x_nose=(2*B_surf_mag_equator/bz)**(1/3)
+console.log("x_nose ", x_nose)
+
 ro_term=ro*x_nose
 
 lamda=ro_term/(Math.sqrt(2*x_nose))
 x_o_mp=x_nose-(lamda**2)/2
 
-x_o_bs=bs*x_o_mp
+x_o_bs=bs*x_o_mp //for venus or mars it is DIFFERENT
 x_nose_bs=bs*x_nose
 l_bs=(x_nose_bs-x_o_bs)*(1+ecc)
 
 ///Conic Bow Shock////
-let teta_max=130
+let teta_max=140
 teta=_.range(0,teta_max*Math.PI/180,0.01)
 cosTeta=_.map(teta, function(num){return Math.cos(num)})
 sinTeta=_.map(teta, function(num){return Math.sin(num)})
@@ -56,6 +66,19 @@ carpim=_.map(r_bs, function(x, index){return cosTeta[index]*x})
 
 x_bs=_.map(carpim, function(x){return x+x_o_bs})
 y_bs=_.map(r_bs, function(x,index){return sinTeta[index]*x})
+
+// Filter out anomaly points 
+var filtered_x = [];
+var filtered_y = [];
+for (var i = 0; i < x_bs.length; i++) {
+    if (x_bs[i] > 1.1 * x_bs[0]) {
+        // Skip anomaly points
+        continue;
+    }
+    // Add non-anomaly points to filtered arrays
+    filtered_x.push(-1 * x_bs[i]);
+    filtered_y.push(-1 * y_bs[i]);
+}
 
 ///earth_shape////
 let Earth=_.range(0,2*Math.PI,0.1)
@@ -74,7 +97,7 @@ y_MP=_.map(muu_tmp_MP, function(a){ return a*lamda})
 
 
 let data = [{
-    x: _.map(x_bs, function(x){return -1*x}),
+    x: filtered_x,
     y: y_bs,
     type: 'scatter',
     name:'Bowshock',
@@ -83,8 +106,8 @@ let data = [{
         width: 2,
         
       }},{
-    x: _.map(x_bs, function(x){return -1*x}),
-    y:_.map(y_bs, function(x){return -1*x}),
+    x: filtered_x,
+    y:filtered_y,
     type: 'scatter',
     showlegend:false,
     name:'Bowshock',
@@ -117,8 +140,8 @@ let data = [{
     x:EarthSin,
     y:EarthCos,
     fill:'toself',
-    color:'#10CA7E',
-    fillcolor:'#10CA7E',
+    color:'#ABD1D8',
+    fillcolor:'#ABD1D8',
     name:'Uranus'
    }
 
@@ -127,11 +150,12 @@ let layout = {
     title: 'URANUS',
     height: 800,
     width: 800,
-    font: {size: 13}, 
+    font: {size: 13},
+    plot_bgcolor: '',
+    paper_bgcolor: '#ace', 
     barmode: 'relative',
-    paper_bgcolor: '#bed',
-    yaxis: {title: 'Y [R<sub>Uranus</sub>]', range: [-25, 25], dtick: 5},
-    xaxis: {title: 'X [R<sub>Uranus</sub>]', range: [-25, 25]}};
+    yaxis: {title: 'Y [R<sub>Uranus</sub>]', range: [-60, 60], dtick: 15},
+    xaxis: {title: 'X [R<sub>Uranus</sub>]', range: [-60, 60], dtick: 15}};
 let config = {responsive: true};
 
 
